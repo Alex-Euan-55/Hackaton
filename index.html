@@ -838,8 +838,14 @@
     <button class="tab-btn" onclick="switchTab('ruta',this)">
       <span class="tab-tag">Tab C · ✅ Bien hecho</span>RutaVerde
     </button>
-    <button class="tab-btn" onclick="switchTab('ecoplato',this)">
-      <span class="tab-tag">Tab D · 🎯 Pitch final</span>EcoPlato
+    <button class="tab-btn" onclick="switchTab('appfit',this)">
+      <span class="tab-tag">Tab D · ❌ Mal hecho</span>AppFit
+    </button>
+    <button class="tab-btn" onclick="switchTab('techrecicla',this)">
+      <span class="tab-tag">Tab E · ❌ Mal hecho</span>TechRecicla
+    </button>
+    <button class="tab-btn" onclick="switchTab('apuntesya',this)">
+      <span class="tab-tag">Tab F · ✅ Bien hecho</span>ApuntesYa
     </button>
   </div>
 
@@ -848,7 +854,9 @@
     <option value="mercado">Tab A · ✅ Bien hecho — MercadoCampus</option>
     <option value="salud">Tab B · ❌ Mal hecho — SaludUni</option>
     <option value="ruta">Tab C · ✅ Bien hecho — RutaVerde</option>
-    <option value="ecoplato">Tab D · 🎯 Pitch final — EcoPlato</option>
+    <option value="appfit">Tab D · ❌ Mal hecho — AppFit</option>
+    <option value="techrecicla">Tab E · ❌ Mal hecho — TechRecicla</option>
+    <option value="apuntesya">Tab F · ✅ Bien hecho — ApuntesYa</option>
   </select>
 
   <!-- ══════════════════════════════════
@@ -1265,125 +1273,422 @@
   </div><!-- /tab-ruta -->
 
   <!-- ══════════════════════════════════
-       TAB D — EcoPlato 🎯 PITCH FINAL
+       TAB D — AppFit ❌ MAL HECHO
   ══════════════════════════════════════ -->
-  <div class="tab-panel" id="tab-ecoplato">
+  <div class="tab-panel" id="tab-appfit">
 
-    <div class="ex-banner pitch">
-      <span class="ex-banner-ico">🎯</span>
+    <div class="ex-banner bad">
+      <span class="ex-banner-ico">❌</span>
       <div class="ex-banner-body">
-        Pitch Final Completo — EcoPlato
-        <small>Resultado de combinar las tres herramientas: Canvas + 4 Preguntas Críticas + Elevator Pitch. Cada línea está anotada con su origen para que identifiques de dónde viene cada parte.</small>
+        Ejemplo mal hecho — AppFit
+        <small>App de fitness universitaria. Error central: usa estadísticas globales de la OMS en lugar de datos propios, modelo sin definir y próximos pasos fuera del horizonte del hackathon.</small>
       </div>
     </div>
 
-    <!-- Pitch script anotado -->
-    <div class="ex-card">
-      <div class="ex-hd"><div class="ex-ico">🎤</div><div class="ex-title">Script del Pitch — EcoPlato (anotado)</div></div>
+    <!-- Canvas MAL -->
+    <div class="ex-card bad-card">
+      <div class="ex-hd"><div class="ex-ico" style="background:rgba(224,82,82,.12);border-color:rgba(224,82,82,.28)">📋</div><div class="ex-title">Pitching Canvas — AppFit <span class="badge b-red" style="margin-left:8px">MAL HECHO</span></div></div>
       <div class="ex-body">
-        <div class="pitch-script">
-
-          <div class="pitch-block">
-            <div class="pb-tag"><span class="pb-tag-inner apertura">Apertura</span></div>
-            <div class="pb-text">
-              <strong>Hola. Somos el Equipo 1, fundadores de EcoPlato.</strong>
-              <div class="pb-note">Presentación del equipo. Breve, directa, con nombre de la solución desde el inicio.</div>
-            </div>
-          </div>
-
-          <div class="pitch-block">
-            <div class="pb-tag"><span class="pb-tag-inner hook">Hook</span></div>
-            <div class="pb-text">
-              <strong>¿Sabías que los restaurantes de nuestra ciudad tiran a la basura más de 10 toneladas de comida en perfecto estado cada día, mientras que miles de estudiantes y jóvenes profesionales buscan opciones de comida rápida y económica?</strong>
-              <div class="pb-note">Pregunta que abre con datos reales. Activa la atención y presenta el problema sin decir "tenemos un problema". Viene del Campo 01 del Canvas y de la Pregunta Crítica 02 (evidencia).</div>
-            </div>
-          </div>
-
-          <div class="pitch-block">
-            <div class="pb-tag"><span class="pb-tag-inner solucion">Solución</span></div>
-            <div class="pb-text">
-              <strong>EcoPlato es una aplicación móvil que conecta a restaurantes que tienen excedentes de comida al final del día con usuarios que buscan comprar platos de calidad con un 50% de descuento.</strong>
-              <div class="pb-note">Solución en una sola oración: quién, qué y para qué. Viene del Campo 03 del Canvas (Modelo/Solución).</div>
-            </div>
-          </div>
-
-          <div class="pitch-block">
-            <div class="pb-tag"><span class="pb-tag-inner modelo">Modelo</span></div>
-            <div class="pb-text">
-              <strong>A diferencia de las aplicaciones de delivery tradicionales, nosotros no solo generamos ingresos adicionales para los restaurantes, sino que ayudamos a reducir la huella de carbono. Cobramos una pequeña comisión del 10% por cada transacción.</strong>
-              <div class="pb-note">Diferenciador + modelo de negocio. El "a diferencia de…" es una estructura clave del Elevator Pitch. La comisión responde a "¿cómo ganan dinero?", del Campo 03 del Canvas.</div>
-            </div>
-          </div>
-
-          <div class="pitch-block">
-            <div class="pb-tag"><span class="pb-tag-inner traccion">Tracción</span></div>
-            <div class="pb-text">
-              <strong>En solo tres meses de prueba beta, hemos sumado a 50 restaurantes y completado más de 2,000 pedidos.</strong>
-              <div class="pb-note">Evidencia de validación real. Responde directamente a la Pregunta Crítica 02 (¿qué evidencia tienes?). Viene del Campo 02 del Canvas.</div>
-            </div>
-          </div>
-
-          <div class="pitch-block">
-            <div class="pb-tag"><span class="pb-tag-inner modelo">Siguiente paso</span></div>
-            <div class="pb-text">
-              <strong>Actualmente estamos buscando una ronda de inversión semilla de $100,000 dólares para expandirnos a tres ciudades más y mejorar nuestra tecnología.</strong>
-              <div class="pb-note">Próximo paso concreto y medible. Responde a la Pregunta Crítica 03 (¿qué necesitas?). Viene del Campo 04 del Canvas (Próximos pasos).</div>
-            </div>
-          </div>
-
-          <div class="pitch-block">
-            <div class="pb-tag"><span class="pb-tag-inner cierre">Cierre</span></div>
-            <div class="pb-text">
-              <strong>Me encantaría invitarte un café esta semana para mostrarte la aplicación en funcionamiento. ¿Me permites tu tarjeta?</strong>
-              <div class="pb-note">Llamada a la acción específica y de bajo compromiso. No pide dinero directamente — pide una reunión. El cierre ideal siempre termina con una pregunta o una acción concreta.</div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-
-    <!-- De dónde viene cada parte -->
-    <div class="ex-card">
-      <div class="ex-hd"><div class="ex-ico">🗺️</div><div class="ex-title">¿De qué herramienta viene cada parte?</div></div>
-      <div class="ex-body">
-        <table class="cv-table">
-          <thead><tr><th>Parte del pitch</th><th>Herramienta de origen</th></tr></thead>
+        <table class="cv-table bad-cv">
+          <thead><tr><th>Campo</th><th>Contenido llenado — con errores señalados</th></tr></thead>
           <tbody>
             <tr>
-              <td><div class="cf-lbl">Apertura</div></td>
-              <td class="cf-val cf-val-cell">Presentación libre del equipo y nombre del proyecto.</td>
+              <td><div class="cf-num">01</div><div class="cf-lbl">Problema validado</div></td>
+              <td class="cf-val-cell">
+                <span class="cf-val">"Los jóvenes universitarios no hacen suficiente ejercicio y tienen malos hábitos de vida. El sedentarismo es un problema mundial que afecta a millones de personas."</span>
+                <div class="err-note"><strong>❌ Error:</strong> Problema planetario sin localización. No hay ningún dato del campus, ni encuesta, ni muestra. "Afecta a millones" no describe a los usuarios específicos a los que la solución va a llegar hoy.</div>
+              </td>
             </tr>
             <tr>
-              <td><div class="cf-lbl">Hook con dato duro</div></td>
-              <td class="cf-val cf-val-cell"><strong>Pitching Canvas — Campo 01</strong> (Problema validado) + <strong>4 Preguntas Críticas — P2</strong> (¿qué evidencia tienes?).</td>
+              <td><div class="cf-num">02</div><div class="cf-lbl">Evidencia</div></td>
+              <td class="cf-val-cell">
+                <span class="cf-val">"Según la OMS, el 80% de los adolescentes no alcanza el nivel mínimo de actividad física recomendado. También encontramos estudios en Google que confirman el problema."</span>
+                <div class="err-note"><strong>❌ Error crítico:</strong> Citar a la OMS con estadísticas globales no es evidencia investigada por el equipo. "Estudios en Google" sin nombre, autor ni año no es fuente citable. No hay encuesta propia, no hay entrevistas, no hay observación directa.</div>
+              </td>
             </tr>
             <tr>
-              <td><div class="cf-lbl">Solución en una oración</div></td>
-              <td class="cf-val cf-val-cell"><strong>Pitching Canvas — Campo 03</strong> (Modelo / Solución).</td>
+              <td><div class="cf-num">03</div><div class="cf-lbl">Modelo</div></td>
+              <td class="cf-val-cell">
+                <span class="cf-val">"Una app gratuita con rutinas de ejercicio, contador de calorías y retos entre amigos. Monetizamos con publicidad y una versión premium con más contenido."</span>
+                <div class="err-note"><strong>❌ Error:</strong> No dice quién paga, cuánto cuesta el premium, qué incluye ni cuándo genera ingreso. La publicidad como modelo sin tracción es muy débil. Ya existen decenas de apps similares — no hay diferenciador claro.</div>
+              </td>
             </tr>
             <tr>
-              <td><div class="cf-lbl">Diferenciador + modelo de ingreso</div></td>
-              <td class="cf-val cf-val-cell"><strong>Pitching Canvas — Campo 03</strong> (Modelo) + estructura del <strong>Elevator Pitch</strong> ("a diferencia de…").</td>
-            </tr>
-            <tr>
-              <td><div class="cf-lbl">Tracción (prueba beta)</div></td>
-              <td class="cf-val cf-val-cell"><strong>Pitching Canvas — Campo 02</strong> (Evidencia) + <strong>4 Preguntas Críticas — P2</strong> (¿qué evidencia tienes?).</td>
-            </tr>
-            <tr>
-              <td><div class="cf-lbl">Siguiente paso + necesidad</div></td>
-              <td class="cf-val cf-val-cell"><strong>Pitching Canvas — Campo 04</strong> (Próximos pasos) + <strong>4 Preguntas Críticas — P3</strong> (¿qué necesitas?).</td>
-            </tr>
-            <tr>
-              <td><div class="cf-lbl">Cierre con llamada a la acción</div></td>
-              <td class="cf-val cf-val-cell"><strong>Elevator Pitch</strong> — estructura de cierre. Termina con pregunta o acción concreta de bajo compromiso.</td>
+              <td><div class="cf-num">04</div><div class="cf-lbl">Próximos pasos</div></td>
+              <td class="cf-val-cell">
+                <span class="cf-val">"Vamos a desarrollar la app completa para iOS y Android, crear una comunidad de usuarios activos y conseguir 10,000 descargas durante el primer año de operación."</span>
+                <div class="err-note"><strong>❌ Error:</strong> Ningún paso es ejecutable durante el hackathon. Desarrollar una app completa son meses de trabajo. "10,000 descargas en el primer año" es una proyección, no un próximo paso.</div>
+              </td>
             </tr>
           </tbody>
         </table>
       </div>
     </div>
 
-  </div><!-- /tab-ecoplato -->
+    <!-- CQ MAL -->
+    <div class="ex-card bad-card">
+      <div class="ex-hd"><div class="ex-ico" style="background:rgba(224,82,82,.12);border-color:rgba(224,82,82,.28)">❓</div><div class="ex-title">4 Preguntas Críticas — AppFit <span class="badge b-red" style="margin-left:8px">MAL HECHO</span></div></div>
+      <div class="ex-body">
+        <div class="cq-list">
+          <div class="cq-item bad-cq">
+            <div class="cq-top"><span class="cq-n">01</span><span class="cq-q">¿Qué riesgo eliminamos?</span></div>
+            <p class="cq-ans">"Eliminamos el riesgo de que los universitarios lleven una vida sedentaria y enfermen a largo plazo."</p>
+            <p class="cq-err">❌ Genérico. "Enfermar a largo plazo" no es un riesgo que una app de fitness elimina hoy. No identifica la barrera específica que impide al usuario hacer ejercicio ahora mismo.</p>
+          </div>
+          <div class="cq-item bad-cq" style="border-color:rgba(224,82,82,.5)">
+            <div class="cq-top"><span class="cq-n">02</span><span class="cq-q">¿Qué evidencia tenemos?</span><span class="badge b-red">CRÍTICA</span></div>
+            <p class="cq-ans">"La OMS dice que el 80% de los jóvenes no hace ejercicio. Además, todos en el equipo queremos estar más en forma y no sabemos qué rutina hacer."</p>
+            <p class="cq-err">❌ Error crítico: estadística global de la OMS + experiencia personal del equipo. Cero investigación propia. Sin encuesta local, el jurado preguntará: ¿cuántos alumnos de este campus tienen este problema y cuál es la barrera real?</p>
+          </div>
+          <div class="cq-item bad-cq">
+            <div class="cq-top"><span class="cq-n">03</span><span class="cq-q">¿Qué necesitamos?</span></div>
+            <p class="cq-ans">"Necesitamos un equipo de desarrolladores iOS y Android, diseñadores UX y un community manager para crecer en redes sociales."</p>
+            <p class="cq-err">❌ Lista de recursos sin cifras ni plazos. Pedir un equipo de desarrollo en un hackathon de ideación indica que el equipo no entiende en qué etapa está ni qué puede validar hoy.</p>
+          </div>
+          <div class="cq-item bad-cq">
+            <div class="cq-top"><span class="cq-n">04</span><span class="cq-q">¿Qué sigue?</span></div>
+            <p class="cq-ans">"En tres meses lanzamos la app, hacemos marketing en redes sociales y escalamos a nivel nacional."</p>
+            <p class="cq-err">❌ Horizonte de tres meses, sin ninguna acción para las próximas horas. "Escalar a nivel nacional" es una ambición, no un próximo paso.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Criterios MAL -->
+    <div class="ex-card bad-card">
+      <div class="ex-hd"><div class="ex-ico" style="background:rgba(224,82,82,.12);border-color:rgba(224,82,82,.28)">🔍</div><div class="ex-title">Criterios de Aceptación — AppFit <span class="badge b-red" style="margin-left:8px">MAL HECHO</span></div></div>
+      <div class="ex-body">
+        <div class="cr-list">
+          <div class="cr-item"><div class="cr-top"><span class="cr-code">C1</span><span class="cr-name">Problema con dato real</span><span class="badge b-red">❌ NO CUMPLE</span></div><p class="cr-just">Estadística global de la OMS, no dato local con muestra definida. No describe el problema en el contexto específico del campus.</p></div>
+          <div class="cr-item"><div class="cr-top"><span class="cr-code">C2</span><span class="cr-name">Solución responde al problema</span><span class="badge b-red">❌ NO CUMPLE</span></div><p class="cr-just">Sin barrera específica identificada, no se puede verificar si la app la resuelve. Rutinas y contador de calorías son funcionalidades, no solución a un problema concreto.</p></div>
+          <div class="cr-item"><div class="cr-top"><span class="cr-code">C3</span><span class="cr-name">Modelo en 2 oraciones</span><span class="badge b-red">❌ NO CUMPLE</span></div><p class="cr-just">"Publicidad y premium" sin precio ni contenido definido. No supera la prueba de las 2 oraciones claras.</p></div>
+          <div class="cr-item"><div class="cr-top"><span class="cr-code">C4</span><span class="cr-name">Evidencia o prototipo</span><span class="badge b-red">❌ NO CUMPLE</span></div><p class="cr-just">Cero investigación propia. Sin encuesta, sin entrevistas, sin prototipo. Solo referencias externas sin citar correctamente.</p></div>
+          <div class="cr-item"><div class="cr-top"><span class="cr-code">C5</span><span class="cr-name">Próximos pasos concretos</span><span class="badge b-red">❌ NO CUMPLE</span></div><p class="cr-just">Todos los pasos están en un horizonte de meses. Nada ejecutable durante el hackathon.</p></div>
+        </div>
+        <div class="verdict no"><div class="verd-lbl">Veredicto final</div><div class="verd-txt">NO PROCEDE</div><div class="verd-note">Incumple los 5 criterios. El equipo necesita salir del salón, encuestar a 30 alumnos del campus e identificar la barrera real antes de continuar.</div></div>
+      </div>
+    </div>
+
+    <!-- Pitch Final ensamblado (resultado del mal llenado) -->
+    <div class="ex-card bad-card">
+      <div class="ex-hd"><div class="ex-ico" style="background:rgba(224,82,82,.12);border-color:rgba(224,82,82,.28)">🎤</div><div class="ex-title">Pitch Final ensamblado — AppFit <span class="badge b-red" style="margin-left:8px">ASÍ SUENA CON DATOS MALOS</span></div></div>
+      <div class="ex-body">
+        <p style="font-size:.82rem;color:#e08080;margin-bottom:16px;line-height:1.6">Resultado de ensamblar las herramientas tal como fueron llenadas. Observa cómo suena sin datos propios.</p>
+        <div class="pitch-script">
+          <div class="pitch-block">
+            <div class="pb-tag"><span class="pb-tag-inner apertura">Apertura</span></div>
+            <div class="pb-text"><strong>Hola, somos el equipo de AppFit.</strong></div>
+          </div>
+          <div class="pitch-block">
+            <div class="pb-tag"><span class="pb-tag-inner hook">Hook</span></div>
+            <div class="pb-text"><strong>La OMS reporta que el 80% de los adolescentes no alcanza el nivel mínimo de actividad física. Los universitarios tenemos malos hábitos de vida.</strong>
+              <div class="pb-note" style="color:var(--red)">❌ Estadística global desconectada del campus. No activa a la audiencia local porque no la describe a ella.</div>
+            </div>
+          </div>
+          <div class="pitch-block">
+            <div class="pb-tag"><span class="pb-tag-inner solucion">Solución</span></div>
+            <div class="pb-text"><strong>Una app con rutinas de ejercicio, contador de calorías y retos entre amigos para que los universitarios lleven una vida más sana.</strong>
+              <div class="pb-note" style="color:var(--red)">❌ Descripción de funcionalidades, no de valor. Existen cientos de apps similares. No hay diferenciador.</div>
+            </div>
+          </div>
+          <div class="pitch-block">
+            <div class="pb-tag"><span class="pb-tag-inner modelo">Modelo</span></div>
+            <div class="pb-text"><strong>Será gratuita con publicidad, y tendremos una versión premium con más contenido.</strong>
+              <div class="pb-note" style="color:var(--red)">❌ Sin precio, sin detalle de qué incluye el premium. No responde "¿cómo y cuándo generan dinero?".</div>
+            </div>
+          </div>
+          <div class="pitch-block">
+            <div class="pb-tag"><span class="pb-tag-inner modelo">Siguiente paso</span></div>
+            <div class="pb-text"><strong>En tres meses lanzamos la app completa y empezamos a crecer en redes sociales para alcanzar las 10,000 descargas.</strong>
+              <div class="pb-note" style="color:var(--red)">❌ Horizonte de meses, no de horas. El jurado no puede evaluar progreso si no hay acción ejecutable hoy.</div>
+            </div>
+          </div>
+          <div class="pitch-block">
+            <div class="pb-tag"><span class="pb-tag-inner cierre">Cierre</span></div>
+            <div class="pb-text"><strong>Necesitamos desarrolladores y diseñadores para construir la app. Esperamos su apoyo.</strong>
+              <div class="pb-note" style="color:var(--red)">❌ Pedir recursos sin tracción ni evidencia. No hay llamada a la acción concreta.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /tab-appfit -->
+
+  <!-- ══════════════════════════════════
+       TAB E — TechRecicla ❌ MAL HECHO
+  ══════════════════════════════════════ -->
+  <div class="tab-panel" id="tab-techrecicla">
+
+    <div class="ex-banner bad">
+      <span class="ex-banner-ico">❌</span>
+      <div class="ex-banner-body">
+        Ejemplo mal hecho — TechRecicla
+        <small>Recolección de electrónicos usados. Error central: problema ambiental global sin datos locales, un documental como única "evidencia" y próximos pasos que requieren capital y meses de trabajo.</small>
+      </div>
+    </div>
+
+    <!-- Canvas MAL -->
+    <div class="ex-card bad-card">
+      <div class="ex-hd"><div class="ex-ico" style="background:rgba(224,82,82,.12);border-color:rgba(224,82,82,.28)">📋</div><div class="ex-title">Pitching Canvas — TechRecicla <span class="badge b-red" style="margin-left:8px">MAL HECHO</span></div></div>
+      <div class="ex-body">
+        <table class="cv-table bad-cv">
+          <thead><tr><th>Campo</th><th>Contenido llenado — con errores señalados</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><div class="cf-num">01</div><div class="cf-lbl">Problema validado</div></td>
+              <td class="cf-val-cell">
+                <span class="cf-val">"La basura electrónica contamina el planeta. Cada año se generan millones de toneladas de e-waste a nivel mundial y los dispositivos terminan en tiraderos tóxicos."</span>
+                <div class="err-note"><strong>❌ Error:</strong> Problema correcto en escala global, irrelevante en escala local. No hay ningún dato del campus, de la ciudad ni del segmento específico de usuarios que el equipo va a atender.</div>
+              </td>
+            </tr>
+            <tr>
+              <td><div class="cf-num">02</div><div class="cf-lbl">Evidencia</div></td>
+              <td class="cf-val-cell">
+                <span class="cf-val">"Vimos un documental en Netflix sobre la basura electrónica en Ghana. El equipo tiene 3 laptops viejas guardadas en casa que nadie usa."</span>
+                <div class="err-note"><strong>❌ Error crítico:</strong> Un documental es contenido periodístico, no evidencia investigada por el equipo. Los dispositivos propios del equipo tampoco son muestra representativa. No hay encuesta ni entrevistas con usuarios potenciales.</div>
+              </td>
+            </tr>
+            <tr>
+              <td><div class="cf-num">03</div><div class="cf-lbl">Modelo</div></td>
+              <td class="cf-val-cell">
+                <span class="cf-val">"Recolectamos dispositivos electrónicos en desuso, los reparamos y los revendemos más baratos a estudiantes que no pueden comprar tecnología nueva."</span>
+                <div class="err-note"><strong>❌ Error:</strong> No incluye análisis de costos: ¿cuánto cuesta reparar un dispositivo? ¿A qué precio se vende? ¿Cuál es el margen? Sin esos números el modelo no es evaluable.</div>
+              </td>
+            </tr>
+            <tr>
+              <td><div class="cf-num">04</div><div class="cf-lbl">Próximos pasos</div></td>
+              <td class="cf-val-cell">
+                <span class="cf-val">"Conseguir un local para el taller, comprar herramientas especializadas de reparación y contratar a un técnico certificado en electrónica."</span>
+                <div class="err-note"><strong>❌ Error:</strong> Todos los pasos requieren capital significativo y semanas o meses para ejecutarse. Ninguno es realizable durante el hackathon. El equipo no menciona ninguna validación posible hoy.</div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- CQ MAL -->
+    <div class="ex-card bad-card">
+      <div class="ex-hd"><div class="ex-ico" style="background:rgba(224,82,82,.12);border-color:rgba(224,82,82,.28)">❓</div><div class="ex-title">4 Preguntas Críticas — TechRecicla <span class="badge b-red" style="margin-left:8px">MAL HECHO</span></div></div>
+      <div class="ex-body">
+        <div class="cq-list">
+          <div class="cq-item bad-cq">
+            <div class="cq-top"><span class="cq-n">01</span><span class="cq-q">¿Qué riesgo eliminamos?</span></div>
+            <p class="cq-ans">"Eliminamos el riesgo de que los dispositivos electrónicos terminen contaminando el medio ambiente."</p>
+            <p class="cq-err">❌ Responde el riesgo ambiental global, no el riesgo del usuario específico. ¿Cuál es el riesgo concreto para el estudiante que compra o dona el dispositivo?</p>
+          </div>
+          <div class="cq-item bad-cq" style="border-color:rgba(224,82,82,.5)">
+            <div class="cq-top"><span class="cq-n">02</span><span class="cq-q">¿Qué evidencia tenemos?</span><span class="badge b-red">CRÍTICA</span></div>
+            <p class="cq-ans">"Vimos el documental 'La pesadilla del e-waste' en Netflix. Es obvio que la gente acumula aparatos viejos — nosotros mismos tenemos varios en casa."</p>
+            <p class="cq-err">❌ Un documental de Netflix + observación propia no es evidencia investigada. No hay cifras del mercado local, ni encuesta sobre disposición a donar/vender dispositivos, ni entrevistas con posibles compradores.</p>
+          </div>
+          <div class="cq-item bad-cq">
+            <div class="cq-top"><span class="cq-n">03</span><span class="cq-q">¿Qué necesitamos?</span></div>
+            <p class="cq-ans">"Necesitamos 50,000 pesos para rentar un local, equipar el taller y contratar a un técnico certificado."</p>
+            <p class="cq-err">❌ Pedir una cifra de capital sin haber validado si alguien quiere el servicio es el orden equivocado. Primero validar demanda, luego estimar costos.</p>
+          </div>
+          <div class="cq-item bad-cq">
+            <div class="cq-top"><span class="cq-n">04</span><span class="cq-q">¿Qué sigue?</span></div>
+            <p class="cq-ans">"En 6 meses tenemos el taller funcionando y hemos reparado y vendido los primeros 20 dispositivos."</p>
+            <p class="cq-err">❌ Seis meses no es un "siguiente paso" en el contexto de un hackathon. No hay ninguna acción ejecutable hoy: sin prototipo, sin encuesta, sin usuario piloto.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Criterios MAL -->
+    <div class="ex-card bad-card">
+      <div class="ex-hd"><div class="ex-ico" style="background:rgba(224,82,82,.12);border-color:rgba(224,82,82,.28)">🔍</div><div class="ex-title">Criterios de Aceptación — TechRecicla <span class="badge b-red" style="margin-left:8px">MAL HECHO</span></div></div>
+      <div class="ex-body">
+        <div class="cr-list">
+          <div class="cr-item"><div class="cr-top"><span class="cr-code">C1</span><span class="cr-name">Problema con dato real</span><span class="badge b-red">❌ NO CUMPLE</span></div><p class="cr-just">Datos globales de e-waste sin localización. No hay encuesta ni dato del campus o la ciudad que describa la magnitud del problema para los usuarios del proyecto.</p></div>
+          <div class="cr-item"><div class="cr-top"><span class="cr-code">C2</span><span class="cr-name">Solución responde al problema</span><span class="badge b-red">❌ NO CUMPLE</span></div><p class="cr-just">La solución podría tener sentido, pero sin datos locales no se puede verificar que haya demanda real de dispositivos reparados a bajo costo en este contexto específico.</p></div>
+          <div class="cr-item"><div class="cr-top"><span class="cr-code">C3</span><span class="cr-name">Modelo en 2 oraciones</span><span class="badge b-red">❌ NO CUMPLE</span></div><p class="cr-just">Falta análisis de costos y márgenes. "Compramos, reparamos y revendemos" sin precio de compra, costo de reparación ni precio de venta no es un modelo evaluable.</p></div>
+          <div class="cr-item"><div class="cr-top"><span class="cr-code">C4</span><span class="cr-name">Evidencia o prototipo</span><span class="badge b-red">❌ NO CUMPLE</span></div><p class="cr-just">Un documental externo y dispositivos propios del equipo no son evidencia investigada. Sin encuesta ni entrevistas el equipo no sabe si alguien realmente quiere el servicio.</p></div>
+          <div class="cr-item"><div class="cr-top"><span class="cr-code">C5</span><span class="cr-name">Próximos pasos concretos</span><span class="badge b-red">❌ NO CUMPLE</span></div><p class="cr-just">Rentar local + comprar herramientas + contratar técnico es un plan de negocio de 6 meses, no pasos ejecutables en el hackathon.</p></div>
+        </div>
+        <div class="verdict no"><div class="verd-lbl">Veredicto final</div><div class="verd-txt">NO PROCEDE</div><div class="verd-note">Incumple los 5 criterios. El equipo debe encuestar a usuarios sobre su disposición a vender o comprar dispositivos y estimar márgenes reales antes de continuar.</div></div>
+      </div>
+    </div>
+
+    <!-- Pitch Final ensamblado (resultado del mal llenado) -->
+    <div class="ex-card bad-card">
+      <div class="ex-hd"><div class="ex-ico" style="background:rgba(224,82,82,.12);border-color:rgba(224,82,82,.28)">🎤</div><div class="ex-title">Pitch Final ensamblado — TechRecicla <span class="badge b-red" style="margin-left:8px">ASÍ SUENA CON DATOS MALOS</span></div></div>
+      <div class="ex-body">
+        <p style="font-size:.82rem;color:#e08080;margin-bottom:16px;line-height:1.6">Resultado de ensamblar las herramientas tal como fueron llenadas. Observa cómo suena sin investigación propia.</p>
+        <div class="pitch-script">
+          <div class="pitch-block">
+            <div class="pb-tag"><span class="pb-tag-inner apertura">Apertura</span></div>
+            <div class="pb-text"><strong>Hola, somos el equipo de TechRecicla.</strong></div>
+          </div>
+          <div class="pitch-block">
+            <div class="pb-tag"><span class="pb-tag-inner hook">Hook</span></div>
+            <div class="pb-text"><strong>Cada año se generan millones de toneladas de basura electrónica en el mundo. Los dispositivos terminan en tiraderos tóxicos en países como Ghana.</strong>
+              <div class="pb-note" style="color:var(--red)">❌ Problema real pero enorme y lejano. La audiencia no se identifica. ¿Qué tiene que ver Ghana con el campus?</div>
+            </div>
+          </div>
+          <div class="pitch-block">
+            <div class="pb-tag"><span class="pb-tag-inner solucion">Solución</span></div>
+            <div class="pb-text"><strong>Recolectamos dispositivos viejos, los reparamos y los vendemos más baratos a estudiantes que no pueden comprar tecnología nueva.</strong>
+              <div class="pb-note" style="color:var(--red)">❌ La idea tiene potencial, pero sin datos de demanda ni margen el jurado no puede evaluar si es viable.</div>
+            </div>
+          </div>
+          <div class="pitch-block">
+            <div class="pb-tag"><span class="pb-tag-inner traccion">Evidencia</span></div>
+            <div class="pb-text"><strong>Vimos un documental sobre e-waste en Netflix y en nuestro equipo tenemos tres laptops viejas que nadie usa.</strong>
+              <div class="pb-note" style="color:var(--red)">❌ Esto no es evidencia investigada. El jurado preguntará: ¿cuántos estudiantes del campus tienen dispositivos en desuso y estarían dispuestos a venderlos?</div>
+            </div>
+          </div>
+          <div class="pitch-block">
+            <div class="pb-tag"><span class="pb-tag-inner modelo">Siguiente paso</span></div>
+            <div class="pb-text"><strong>Necesitamos 50,000 pesos para rentar el taller, comprar herramientas y contratar a un técnico. En 6 meses estaremos operando.</strong>
+              <div class="pb-note" style="color:var(--red)">❌ Pedir capital antes de validar demanda. "6 meses" no existe en el contexto del hackathon.</div>
+            </div>
+          </div>
+          <div class="pitch-block">
+            <div class="pb-tag"><span class="pb-tag-inner cierre">Cierre</span></div>
+            <div class="pb-text"><strong>Creemos que podemos cambiar la forma en que se maneja la basura electrónica en México. Esperamos contar con su apoyo.</strong>
+              <div class="pb-note" style="color:var(--red)">❌ Cierre aspiracional sin llamada a la acción. "Esperamos su apoyo" no define qué tipo de apoyo ni qué sigue.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /tab-techrecicla -->
+
+  <!-- ══════════════════════════════════
+       TAB F — ApuntesYa ✅ BIEN HECHO
+  ══════════════════════════════════════ -->
+  <div class="tab-panel" id="tab-apuntesya">
+
+    <div class="ex-banner good">
+      <span class="ex-banner-ico">✅</span>
+      <div class="ex-banner-body">
+        Ejemplo bien hecho — ApuntesYa
+        <small>Marketplace de apuntes universitarios con evidencia triple propia: encuesta, entrevistas y observación de grupos. Modelo freemium claro con incentivo al creador y piloto ejecutable hoy.</small>
+      </div>
+    </div>
+
+    <!-- Canvas -->
+    <div class="ex-card">
+      <div class="ex-hd"><div class="ex-ico">📋</div><div class="ex-title">Pitching Canvas — ApuntesYa</div></div>
+      <div class="ex-body">
+        <table class="cv-table">
+          <thead><tr><th>Campo</th><th>Contenido llenado</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><div class="cf-num">01</div><div class="cf-lbl">Problema validado</div></td>
+              <td class="cf-val cf-val-cell">El 68% de los alumnos del ITSM busca apuntes fuera del campus porque el material disponible en las plataformas oficiales no es suficiente para preparar exámenes (encuesta propia, 95 respuestas, 2025). Cálculo I, Física II y Programación concentran el 60% de las búsquedas.</td>
+            </tr>
+            <tr>
+              <td><div class="cf-num">02</div><div class="cf-lbl">Evidencia</div></td>
+              <td class="cf-val cf-val-cell">Encuesta a 95 estudiantes: 68% busca apuntes fuera del campus, 45% lo hace de forma semanal. 6 entrevistas con alumnos de materias con alta reprobación: la barrera es la falta de apuntes claros organizados por unidad. Observación de 4 grupos de WhatsApp de alumnos: promedio de 12 solicitudes de apuntes por semana.</td>
+            </tr>
+            <tr>
+              <td><div class="cf-num">03</div><div class="cf-lbl">Modelo</div></td>
+              <td class="cf-val cf-val-cell">Plataforma donde los alumnos del ITSM suben y acceden a apuntes organizados por materia y unidad. Acceso básico gratuito; suscripción de 49 pesos/mes para material premium calificado. Los creadores más valorados reciben el 30% de los ingresos generados por sus materiales.</td>
+            </tr>
+            <tr>
+              <td><div class="cf-num">04</div><div class="cf-lbl">Próximos pasos</div></td>
+              <td class="cf-val cf-val-cell">Hoy cargamos 3 juegos de apuntes de Cálculo I, Física II y Programación facilitados por alumnos voluntarios. Meta: 15 usuarios registrados que descarguen y califiquen al menos 1 apunte antes del cierre del hackathon.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- CQ -->
+    <div class="ex-card">
+      <div class="ex-hd"><div class="ex-ico">❓</div><div class="ex-title">4 Preguntas Críticas — ApuntesYa</div></div>
+      <div class="ex-body">
+        <div class="cq-list">
+          <div class="cq-item">
+            <div class="cq-top"><span class="cq-n">01</span><span class="cq-q">¿Qué riesgo eliminamos?</span></div>
+            <p class="cq-ans">El riesgo de llegar a un examen sin material de estudio confiable. Al centrarnos en apuntes verificados por compañeros del mismo ITSM y organizados por unidad, el alumno sabe que el contenido es relevante para su plan de estudios específico.</p>
+          </div>
+          <div class="cq-item crit">
+            <div class="cq-top"><span class="cq-n">02</span><span class="cq-q">¿Qué evidencia tenemos?</span><span class="badge b-red">CRÍTICA</span></div>
+            <p class="cq-ans">Encuesta a 95 estudiantes: 68% busca apuntes fuera del campus, 45% semanalmente. 6 entrevistas con alumnos de Cálculo I y Física II: la barrera es la falta de organización por unidad temática. Observación de 4 grupos de WhatsApp: 12 solicitudes de apuntes por semana en promedio. Tres fuentes propias que convergen en el mismo hallazgo.</p>
+          </div>
+          <div class="cq-item">
+            <div class="cq-top"><span class="cq-n">03</span><span class="cq-q">¿Qué necesitamos?</span></div>
+            <p class="cq-ans">Acceso al catálogo oficial de materias y planes de estudio del ITSM para estructurar correctamente la plataforma, y validación de la institución para comunicar el proyecto por los canales oficiales del campus.</p>
+          </div>
+          <div class="cq-item">
+            <div class="cq-top"><span class="cq-n">04</span><span class="cq-q">¿Qué sigue?</span></div>
+            <p class="cq-ans">3 juegos de apuntes listos para subir hoy (Cálculo I, Física II, Programación). Reclutamos 15 usuarios beta durante el hackathon. Meta: al menos 1 flujo de descarga y calificación completado y documentado antes del cierre.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Criterios -->
+    <div class="ex-card">
+      <div class="ex-hd"><div class="ex-ico">✅</div><div class="ex-title">Criterios de Aceptación — ApuntesYa</div></div>
+      <div class="ex-body">
+        <div class="cr-list">
+          <div class="cr-item"><div class="cr-top"><span class="cr-code">C1</span><span class="cr-name">Problema con dato real</span><span class="badge b-green">✅ SÍ CUMPLE</span></div><p class="cr-just">Encuesta propia a 95 estudiantes del ITSM: 68% busca apuntes fuera del campus, 45% semanalmente. Dato específico, muestra definida, contexto local.</p></div>
+          <div class="cr-item"><div class="cr-top"><span class="cr-code">C2</span><span class="cr-name">Solución responde al problema</span><span class="badge b-green">✅ SÍ CUMPLE</span></div><p class="cr-just">Problema = falta de apuntes confiables organizados por unidad. Solución = plataforma de apuntes del mismo campus, organizados por materia y unidad. La conexión es directa.</p></div>
+          <div class="cr-item"><div class="cr-top"><span class="cr-code">C3</span><span class="cr-name">Modelo en 2 oraciones</span><span class="badge b-green">✅ SÍ CUMPLE</span></div><p class="cr-just">Acceso gratuito básico + suscripción de 49 pesos/mes para premium (qué hace y cómo genera ingreso). Incentivo del 30% al creador añade diferenciador de oferta. Cumple las 2 oraciones claras.</p></div>
+          <div class="cr-item"><div class="cr-top"><span class="cr-code">C4</span><span class="cr-name">Evidencia o prototipo</span><span class="badge b-green">✅ SÍ CUMPLE</span></div><p class="cr-just">Tres fuentes de investigación propia convergentes: encuesta + entrevistas + observación de grupos. Cumple por evidencia sólida y triple.</p></div>
+          <div class="cr-item"><div class="cr-top"><span class="cr-code">C5</span><span class="cr-name">Próximos pasos concretos</span><span class="badge b-green">✅ SÍ CUMPLE</span></div><p class="cr-just">3 juegos de apuntes listos + 15 usuarios beta a reclutar hoy + meta de 1 flujo completo documentado. Todos ejecutables durante el hackathon.</p></div>
+        </div>
+        <div class="verdict ok"><div class="verd-lbl">Veredicto final</div><div class="verd-txt">PROCEDE</div><div class="verd-note">Cumple los 5 criterios. Evidencia triple convergente, modelo con incentivo al creador y piloto ejecutable hoy. Pitch listo para presentar.</div></div>
+      </div>
+    </div>
+
+    <!-- Pitch Final ensamblado -->
+    <div class="ex-card">
+      <div class="ex-hd"><div class="ex-ico">🎤</div><div class="ex-title">Pitch Final ensamblado — ApuntesYa</div></div>
+      <div class="ex-body">
+        <div class="pitch-script">
+          <div class="pitch-block">
+            <div class="pb-tag"><span class="pb-tag-inner apertura">Apertura</span></div>
+            <div class="pb-text"><strong>Hola, somos el equipo fundador de ApuntesYa.</strong></div>
+          </div>
+          <div class="pitch-block">
+            <div class="pb-tag"><span class="pb-tag-inner hook">Hook</span></div>
+            <div class="pb-text"><strong>¿Saben que el 68% de los alumnos del ITSM busca apuntes fuera del campus porque el material disponible no es suficiente para preparar sus exámenes? Y que el 45% lo hace cada semana.</strong>
+              <div class="pb-note">Canvas Campo 01 + 4CQ Pregunta 02 — dato propio, encuesta 95 respuestas.</div>
+            </div>
+          </div>
+          <div class="pitch-block">
+            <div class="pb-tag"><span class="pb-tag-inner solucion">Solución</span></div>
+            <div class="pb-text"><strong>ApuntesYa es una plataforma donde los mismos alumnos del ITSM suben y acceden a apuntes organizados por materia y unidad, calificados por sus propios compañeros.</strong>
+              <div class="pb-note">Canvas Campo 03 — solución en una oración: quién, qué, para qué.</div>
+            </div>
+          </div>
+          <div class="pitch-block">
+            <div class="pb-tag"><span class="pb-tag-inner modelo">Modelo</span></div>
+            <div class="pb-text"><strong>A diferencia de los grupos de WhatsApp o Google Drive, el contenido está verificado y organizado por plan de estudios del ITSM. El acceso básico es gratuito; los alumnos que quieran material premium pagan 49 pesos al mes, y los creadores más valorados reciben el 30% de lo generado con sus apuntes.</strong>
+              <div class="pb-note">Canvas Campo 03 + estructura "a diferencia de…" del Elevator Pitch.</div>
+            </div>
+          </div>
+          <div class="pitch-block">
+            <div class="pb-tag"><span class="pb-tag-inner traccion">Evidencia</span></div>
+            <div class="pb-text"><strong>Encuestamos a 95 estudiantes, entrevistamos a 6 alumnos de las materias con más reprobación y observamos 4 grupos de WhatsApp: aparecen 12 solicitudes de apuntes por semana en promedio.</strong>
+              <div class="pb-note">Canvas Campo 02 + 4CQ Pregunta 02 — evidencia triple convergente.</div>
+            </div>
+          </div>
+          <div class="pitch-block">
+            <div class="pb-tag"><span class="pb-tag-inner modelo">Siguiente paso</span></div>
+            <div class="pb-text"><strong>Hoy subimos 3 juegos de apuntes de Cálculo I, Física II y Programación, y vamos a completar el flujo de descarga y calificación con 15 usuarios beta antes del cierre del hackathon.</strong>
+              <div class="pb-note">Canvas Campo 04 + 4CQ Pregunta 04 — pasos ejecutables hoy con meta observable.</div>
+            </div>
+          </div>
+          <div class="pitch-block">
+            <div class="pb-tag"><span class="pb-tag-inner cierre">Cierre</span></div>
+            <div class="pb-text"><strong>¿Nos permiten 10 minutos esta tarde para mostrarles el prototipo con los primeros apuntes cargados y los usuarios piloto navegando?</strong>
+              <div class="pb-note">Elevator Pitch — cierre con llamada a la acción específica y de bajo compromiso.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /tab-apuntesya -->
 
 </section>
 
@@ -1411,7 +1716,7 @@
   }
 
   /* ── Tabs ───────────────────────────────────────── */
-  const TAB_ORDER = ['mercado','salud','ruta'];
+  const TAB_ORDER = ['mercado','salud','ruta','appfit','techrecicla','apuntesya'];
 
   function switchTab(name, btn) {
     document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
