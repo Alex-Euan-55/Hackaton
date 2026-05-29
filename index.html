@@ -1,0 +1,1496 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía de Pitch — Hackathon 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy: #1A2F5E;
+            --navy-light: #243d7a;
+            --navy-dark: #0f1c38;
+            --gold: #C9A84C;
+            --gold-light: #dbbe77;
+            --bg: #0d1628;
+            --surface: #162240;
+            --surface-2: #1e2f55;
+            --text: #e8edf5;
+            --text-muted: #8a9bbf;
+            --text-secondary: #b0bdd8;
+            --red: #e05252;
+            --green: #4caf7d;
+            --border: #2a3f6f;
+            --radius: 12px;
+            --radius-sm: 8px;
+            --transition: 0.3s ease;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* ── HEADER ── */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(13, 22, 40, 0.96);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            height: 64px;
+        }
+
+        .nav-brand {
+            font-weight: 800;
+            font-size: 0.95rem;
+            color: var(--gold);
+            white-space: nowrap;
+        }
+
+        .nav-brand span { color: var(--text-muted); font-weight: 400; }
+
+        .nav-links { display: flex; gap: 4px; list-style: none; }
+
+        .nav-links a {
+            display: block;
+            padding: 7px 18px;
+            border-radius: 30px;
+            text-decoration: none;
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: all var(--transition);
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            background: var(--navy);
+            color: var(--gold);
+        }
+
+        /* ── HERO ── */
+        .hero {
+            background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 55%, var(--navy-light) 100%);
+            padding: 80px 20px 70px;
+            text-align: center;
+            border-bottom: 2px solid var(--gold);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 72% 48%, rgba(201,168,76,0.09) 0%, transparent 58%);
+        }
+
+        .hero-label {
+            display: inline-block;
+            background: rgba(201,168,76,0.12);
+            border: 1px solid rgba(201,168,76,0.3);
+            color: var(--gold);
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 1.8px;
+            text-transform: uppercase;
+            padding: 6px 18px;
+            border-radius: 30px;
+            margin-bottom: 24px;
+        }
+
+        .hero h1 {
+            font-size: clamp(1.9rem, 5vw, 3.4rem);
+            font-weight: 800;
+            line-height: 1.15;
+            color: var(--text);
+            margin-bottom: 18px;
+        }
+
+        .hero h1 em { font-style: normal; color: var(--gold); }
+
+        .hero p {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            max-width: 580px;
+            margin: 0 auto;
+        }
+
+        /* ── MAIN ── */
+        main { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+        .section { padding: 64px 0; }
+
+        .section-header { margin-bottom: 40px; }
+
+        .section-number {
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 8px;
+        }
+
+        .section-title {
+            font-size: clamp(1.5rem, 3vw, 2.1rem);
+            font-weight: 800;
+            color: var(--text);
+            margin-bottom: 10px;
+        }
+
+        .section-desc { color: var(--text-muted); font-size: 0.95rem; max-width: 580px; }
+
+        /* ── TOOL CARD (outer accordion) ── */
+        .tool-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            margin-bottom: 16px;
+            overflow: hidden;
+            transition: border-color var(--transition);
+        }
+
+        .tool-card:hover { border-color: rgba(201,168,76,0.5); }
+
+        .tool-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 22px 26px;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .tool-header-left { display: flex; align-items: center; gap: 16px; }
+
+        .tool-number {
+            background: var(--gold);
+            color: var(--navy-dark);
+            font-weight: 800;
+            font-size: 0.85rem;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .tool-title { font-size: 1.1rem; font-weight: 700; }
+        .tool-subtitle { font-size: 0.78rem; color: var(--text-muted); margin-top: 2px; }
+
+        .tool-chevron {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: var(--surface-2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: background var(--transition);
+        }
+
+        .tool-chevron svg { transition: transform var(--transition); }
+        .tool-card.open .tool-chevron { background: var(--gold); }
+        .tool-card.open .tool-chevron svg { transform: rotate(180deg); }
+
+        .tool-body { max-height: 0; overflow: hidden; transition: max-height 0.55s cubic-bezier(0.4,0,0.2,1); }
+        .tool-card.open .tool-body { max-height: 6000px; }
+
+        .tool-body-inner {
+            padding: 0 26px 26px;
+            border-top: 1px solid var(--border);
+        }
+
+        /* ── FIELD ACCORDION (inner) ── */
+        .field-accordion { margin-top: 18px; display: grid; gap: 8px; }
+
+        .field-item {
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+        }
+
+        .field-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 18px;
+            cursor: pointer;
+            background: var(--surface-2);
+            transition: background var(--transition);
+        }
+
+        .field-header:hover { background: rgba(201,168,76,0.06); }
+
+        .field-num {
+            font-size: 0.68rem;
+            font-weight: 700;
+            color: var(--gold);
+            letter-spacing: 1px;
+            min-width: 22px;
+        }
+
+        .field-name { font-weight: 600; font-size: 0.92rem; flex: 1; }
+
+        .field-chevron { transition: transform var(--transition); color: var(--text-muted); flex-shrink: 0; }
+        .field-item.open .field-chevron { transform: rotate(180deg); color: var(--gold); }
+
+        .field-body { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+        .field-item.open .field-body { max-height: 1200px; }
+
+        .field-body-inner { padding: 18px; display: grid; gap: 14px; }
+
+        .guide-quote {
+            font-size: 0.84rem;
+            color: var(--gold);
+            font-style: italic;
+            border-left: 3px solid var(--gold);
+            padding-left: 12px;
+        }
+
+        /* ── INFO BLOCKS ── */
+        .info-block {
+            background: rgba(255,255,255,0.03);
+            border-radius: var(--radius-sm);
+            padding: 13px 15px;
+        }
+
+        .info-label {
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 7px;
+        }
+
+        .info-block.what .info-label { color: var(--text-muted); }
+        .info-block.what-not .info-label { color: var(--red); }
+        .info-block.how .info-label { color: var(--gold); }
+        .info-block.good .info-label { color: var(--green); }
+
+        .info-block p { font-size: 0.87rem; color: var(--text-secondary); line-height: 1.65; }
+        .info-block.what-not p { color: #e08080; }
+
+        .steps { list-style: none; display: grid; gap: 7px; }
+        .steps li { display: flex; gap: 10px; font-size: 0.87rem; color: var(--text-secondary); }
+
+        .step-n {
+            background: var(--gold);
+            color: var(--navy-dark);
+            font-weight: 700;
+            font-size: 0.65rem;
+            min-width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+
+        /* ── BADGES ── */
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.3px;
+            white-space: nowrap;
+        }
+
+        .badge-red { background: rgba(224,82,82,0.18); color: var(--red); border: 1px solid rgba(224,82,82,0.38); }
+        .badge-green { background: rgba(76,175,125,0.18); color: var(--green); border: 1px solid rgba(76,175,125,0.38); }
+        .badge-orange { background: rgba(255,165,0,0.15); color: #ffa040; border: 1px solid rgba(255,165,0,0.3); }
+        .badge-gold { background: rgba(201,168,76,0.18); color: var(--gold); border: 1px solid rgba(201,168,76,0.38); }
+
+        /* ── ALERT BOX ── */
+        .alert-box {
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+            background: rgba(224,82,82,0.07);
+            border: 1px solid rgba(224,82,82,0.28);
+            border-radius: var(--radius-sm);
+            padding: 13px 15px;
+        }
+
+        .alert-icon { font-size: 1rem; flex-shrink: 0; margin-top: 1px; }
+        .alert-box p { font-size: 0.86rem; color: #e08080; line-height: 1.55; }
+
+        /* ── CHECKLIST ── */
+        .checklist-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 14px;
+            padding: 13px 17px;
+            background: var(--surface-2);
+            border-radius: var(--radius-sm);
+        }
+
+        .counter-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 4px; }
+        .counter-num { font-size: 1.55rem; font-weight: 800; color: var(--gold); }
+
+        .checklist-items { display: grid; gap: 8px; }
+
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 13px;
+            padding: 14px 17px;
+            background: var(--surface-2);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            transition: all var(--transition);
+        }
+
+        .checklist-item:hover { border-color: var(--gold); }
+        .checklist-item.checked { border-color: var(--green); background: rgba(76,175,125,0.05); }
+
+        .check-box {
+            width: 22px;
+            height: 22px;
+            border: 2px solid var(--border);
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 1px;
+            transition: all var(--transition);
+        }
+
+        .checklist-item.checked .check-box { background: var(--green); border-color: var(--green); }
+
+        .check-mark { display: none; color: #fff; font-size: 0.72rem; font-weight: 700; }
+        .checklist-item.checked .check-mark { display: block; }
+
+        .check-code { font-size: 0.68rem; font-weight: 700; color: var(--gold); letter-spacing: 1px; margin-bottom: 2px; }
+        .check-name { font-weight: 600; font-size: 0.92rem; margin-bottom: 2px; }
+        .check-desc { font-size: 0.81rem; color: var(--text-muted); }
+
+        .checklist-feedback {
+            margin-top: 14px;
+            padding: 13px 17px;
+            border-radius: var(--radius-sm);
+            font-size: 0.88rem;
+            font-weight: 600;
+            text-align: center;
+            display: none;
+        }
+
+        .checklist-feedback.show-green {
+            display: block;
+            background: rgba(76,175,125,0.12);
+            border: 1px solid rgba(76,175,125,0.35);
+            color: var(--green);
+        }
+
+        .checklist-feedback.show-red {
+            display: block;
+            background: rgba(224,82,82,0.09);
+            border: 1px solid rgba(224,82,82,0.28);
+            color: #e08080;
+        }
+
+        /* ── DIVIDER ── */
+        .divider { border: none; border-top: 1px solid var(--border); margin: 0; }
+
+        /* ── TABS ── */
+        .tabs-nav {
+            display: flex;
+            gap: 6px;
+            margin-bottom: 30px;
+            background: var(--surface);
+            padding: 6px;
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+        }
+
+        .tab-btn {
+            flex: 1;
+            padding: 11px 14px;
+            border: none;
+            background: transparent;
+            color: var(--text-muted);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.875rem;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all var(--transition);
+            text-align: center;
+        }
+
+        .tab-btn:hover { background: var(--surface-2); color: var(--text); }
+
+        .tab-btn.active {
+            background: var(--navy);
+            color: var(--gold);
+            border: 1px solid rgba(201,168,76,0.3);
+        }
+
+        .tab-tag {
+            display: block;
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            opacity: 0.65;
+            margin-bottom: 2px;
+        }
+
+        .tabs-select {
+            display: none;
+            width: 100%;
+            padding: 12px 40px 12px 16px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            color: var(--text);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+            cursor: pointer;
+            appearance: none;
+            -webkit-appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23C9A84C' stroke-width='2.5'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 12px center;
+        }
+
+        .tabs-select option { background: var(--surface); }
+
+        .tab-panel { display: none; }
+        .tab-panel.active { display: block; animation: fadeUp 0.3s ease; }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(10px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ── EXAMPLE CARDS ── */
+        .ex-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+
+        .ex-card-header {
+            padding: 18px 22px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--surface-2);
+        }
+
+        .ex-icon {
+            width: 34px;
+            height: 34px;
+            background: rgba(201,168,76,0.13);
+            border: 1px solid rgba(201,168,76,0.28);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+        }
+
+        .ex-card-title { font-weight: 700; font-size: 0.97rem; }
+
+        .ex-body { padding: 22px; }
+
+        /* Canvas table */
+        .canvas-table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+
+        .canvas-table th {
+            padding: 9px 14px;
+            text-align: left;
+            font-size: 0.67rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            background: rgba(255,255,255,0.02);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .canvas-table td {
+            padding: 13px 14px;
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+            vertical-align: top;
+        }
+
+        .canvas-table td:first-child { width: 170px; }
+        .canvas-table tr:last-child td { border-bottom: none; }
+
+        .cf-num { font-size: 0.63rem; color: var(--text-muted); margin-bottom: 2px; }
+        .cf-label { font-weight: 700; font-size: 0.8rem; color: var(--gold); }
+        .cf-content { color: var(--text-secondary); line-height: 1.65; }
+
+        /* CQ list */
+        .cq-list { display: grid; gap: 10px; }
+
+        .cq-item {
+            padding: 16px 18px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            background: rgba(255,255,255,0.02);
+        }
+
+        .cq-item.critical {
+            border-color: rgba(201,168,76,0.4);
+            background: rgba(201,168,76,0.04);
+        }
+
+        .cq-top { display: flex; align-items: center; gap: 10px; margin-bottom: 9px; }
+        .cq-num { font-size: 0.63rem; font-weight: 700; color: var(--text-muted); min-width: 20px; }
+        .cq-question { font-weight: 600; font-size: 0.88rem; flex: 1; }
+        .cq-answer { font-size: 0.87rem; color: var(--text-secondary); line-height: 1.65; padding-left: 30px; }
+
+        /* Criteria */
+        .crit-list { display: grid; gap: 9px; margin-bottom: 18px; }
+
+        .crit-item {
+            padding: 13px 17px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+        }
+
+        .crit-top { display: flex; align-items: center; gap: 10px; margin-bottom: 5px; }
+        .crit-code { font-size: 0.68rem; font-weight: 700; color: var(--text-muted); min-width: 22px; }
+        .crit-name { font-weight: 600; font-size: 0.88rem; flex: 1; }
+        .crit-just { font-size: 0.81rem; color: var(--text-muted); padding-left: 32px; line-height: 1.55; }
+
+        /* Verdict */
+        .verdict {
+            text-align: center;
+            padding: 22px;
+            border-radius: var(--radius-sm);
+        }
+
+        .verdict.proceed {
+            background: rgba(76,175,125,0.1);
+            border: 2px solid rgba(76,175,125,0.45);
+        }
+
+        .verdict.no-proceed {
+            background: rgba(224,82,82,0.1);
+            border: 2px solid rgba(224,82,82,0.45);
+        }
+
+        .verdict-lbl {
+            font-size: 0.67rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+
+        .verdict-txt { font-size: 2rem; font-weight: 800; }
+        .verdict.proceed .verdict-txt { color: var(--green); }
+        .verdict.no-proceed .verdict-txt { color: var(--red); }
+        .verdict-note { font-size: 0.82rem; color: var(--text-muted); margin-top: 6px; }
+
+        /* ── FAB ── */
+        .fab {
+            position: fixed;
+            bottom: 28px;
+            right: 24px;
+            width: 48px;
+            height: 48px;
+            background: var(--gold);
+            color: var(--navy-dark);
+            border: none;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 200;
+            box-shadow: 0 4px 20px rgba(201,168,76,0.4);
+            transition: all var(--transition);
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(16px);
+        }
+
+        .fab.visible { opacity: 1; pointer-events: auto; transform: translateY(0); }
+        .fab:hover { background: var(--gold-light); box-shadow: 0 6px 24px rgba(201,168,76,0.5); transform: translateY(-2px); }
+
+        /* ── FOOTER ── */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 30px 20px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.82rem;
+        }
+
+        footer strong { color: var(--gold); }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 768px) {
+            .nav-brand span { display: none; }
+            .tabs-nav { display: none; }
+            .tabs-select { display: block; }
+            .tool-header { padding: 16px 18px; }
+            .tool-body-inner { padding: 0 14px 18px; }
+            .canvas-table td:first-child { width: 120px; }
+            .hero { padding: 52px 20px 48px; }
+        }
+
+        @media (max-width: 480px) {
+            .checklist-top { flex-direction: column; gap: 8px; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ══ HEADER ══════════════════════════════════════════════════════ -->
+<header>
+    <div class="nav-container">
+        <div class="nav-brand">Pitch Guide <span>/ Hackathon 2026</span></div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#como-llenar" class="active" data-section="como-llenar">Cómo llenar</a></li>
+                <li><a href="#ejemplos-reales" data-section="ejemplos-reales">Ejemplos reales</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<!-- ══ HERO ════════════════════════════════════════════════════════ -->
+<section class="hero">
+    <div class="hero-label">Business Design · Etapa 6</div>
+    <h1>Guía interactiva de <em>Pitch</em></h1>
+    <p>Aprende cómo llenar las tres herramientas y consulta ejemplos reales de ideas universitarias.</p>
+</section>
+
+<main>
+
+<!-- ══ SECCIÓN 1: CÓMO LLENAR ══════════════════════════════════════ -->
+<section class="section" id="como-llenar">
+    <div class="section-header">
+        <div class="section-number">01 — Sección</div>
+        <h2 class="section-title">Cómo llenar</h2>
+        <p class="section-desc">Tres herramientas explicadas campo por campo. Haz clic para expandir cada una.</p>
+    </div>
+
+    <!-- ▸ HERRAMIENTA 1: Pitching Canvas -->
+    <div class="tool-card" id="tool1">
+        <div class="tool-header" onclick="toggleTool('tool1')">
+            <div class="tool-header-left">
+                <div class="tool-number">1</div>
+                <div>
+                    <div class="tool-title">Pitching Canvas</div>
+                    <div class="tool-subtitle">Estructura visual de tu propuesta — 4 campos</div>
+                </div>
+            </div>
+            <div class="tool-chevron">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+        </div>
+        <div class="tool-body">
+            <div class="tool-body-inner">
+                <div class="field-accordion">
+
+                    <!-- 01 Problema validado -->
+                    <div class="field-item" id="f1-1">
+                        <div class="field-header" onclick="toggleField('f1-1')">
+                            <span class="field-num">01</span>
+                            <div class="field-name">Problema validado</div>
+                            <svg class="field-chevron" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+                        </div>
+                        <div class="field-body">
+                            <div class="field-body-inner">
+                                <p class="guide-quote">¿Cuál es el problema real que resuelves y quién lo tiene?</p>
+                                <div class="info-block what">
+                                    <div class="info-label">Qué va aquí</div>
+                                    <p>Un enunciado claro del problema que afecta a un grupo específico de personas. Incluye quién lo sufre, qué está fallando hoy, y una magnitud concreta: porcentaje, frecuencia o costo. Ejemplo: "El 70% de los estudiantes vende artículos por WhatsApp sin garantías."</p>
+                                </div>
+                                <div class="info-block what-not">
+                                    <div class="info-label">Qué NO va aquí</div>
+                                    <p>Describir la ausencia de tu solución como el problema. "No existe una app de marketplace estudiantil" no es el problema del usuario: es la ausencia de tu producto. El problema real es el riesgo o la fricción que vive la persona.</p>
+                                </div>
+                                <div class="info-block how">
+                                    <div class="info-label">Cómo obtenerlo</div>
+                                    <ol class="steps">
+                                        <li><span class="step-n">1</span>Identifica quién sufre el problema con la mayor precisión posible (perfil, no demografía genérica).</li>
+                                        <li><span class="step-n">2</span>Describe qué hace esa persona hoy para resolverlo y por qué esa solución falla.</li>
+                                        <li><span class="step-n">3</span>Agrega un número: frecuencia, porcentaje afectado o costo del problema.</li>
+                                        <li><span class="step-n">4</span>Valida hablando con al menos 5 personas del perfil antes de escribir este campo.</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 02 Evidencia -->
+                    <div class="field-item" id="f1-2">
+                        <div class="field-header" onclick="toggleField('f1-2')">
+                            <span class="field-num">02</span>
+                            <div class="field-name">Evidencia</div>
+                            <svg class="field-chevron" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+                        </div>
+                        <div class="field-body">
+                            <div class="field-body-inner">
+                                <p class="guide-quote">¿Qué datos o hallazgos demuestran que el problema existe?</p>
+                                <div class="info-block what">
+                                    <div class="info-label">Qué va aquí</div>
+                                    <p>Datos concretos que confirman el problema: encuestas propias con muestra definida, entrevistas con hallazgos citables, observación directa documentada, o estadísticas de fuentes reconocidas. La evidencia propia (recolectada por el equipo) vale más que la bibliográfica.</p>
+                                </div>
+                                <div class="info-block what-not">
+                                    <div class="info-label">Qué NO va aquí</div>
+                                    <p>Opiniones sin respaldo ("creemos que muchos estudiantes tienen este problema") o estadísticas globales sin conexión directa con tu contexto local. La intuición del equipo no cuenta como evidencia investigada.</p>
+                                </div>
+                                <div class="info-block how">
+                                    <div class="info-label">Cómo obtenerlo</div>
+                                    <ol class="steps">
+                                        <li><span class="step-n">1</span>Diseña una encuesta de 3–5 preguntas cerradas sobre el problema (no sobre tu solución).</li>
+                                        <li><span class="step-n">2</span>Aplica a mínimo 30 personas del perfil objetivo en tu campus.</li>
+                                        <li><span class="step-n">3</span>Realiza 5–8 entrevistas de 10 minutos para entender el "por qué" detrás de los números.</li>
+                                        <li><span class="step-n">4</span>Documenta con capturas, audios o registros escritos que puedas mostrar al jurado.</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 03 Modelo -->
+                    <div class="field-item" id="f1-3">
+                        <div class="field-header" onclick="toggleField('f1-3')">
+                            <span class="field-num">03</span>
+                            <div class="field-name">Modelo</div>
+                            <svg class="field-chevron" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+                        </div>
+                        <div class="field-body">
+                            <div class="field-body-inner">
+                                <p class="guide-quote">¿Cómo funciona tu solución y cómo genera valor o ingreso?</p>
+                                <div class="info-block what">
+                                    <div class="info-label">Qué va aquí</div>
+                                    <p>Dos oraciones máximo: la primera describe QUÉ hace tu solución para el usuario, la segunda explica CÓMO gana dinero o se sostiene. Debe ser tan claro que alguien sin contexto lo entienda en 15 segundos al leerlo en voz alta.</p>
+                                </div>
+                                <div class="info-block what-not">
+                                    <div class="info-label">Qué NO va aquí</div>
+                                    <p>Describir funcionalidades técnicas ("usamos IA y blockchain") sin explicar el valor real para el usuario ni cómo el modelo es viable económicamente. La tecnología no es el modelo.</p>
+                                </div>
+                                <div class="info-block how">
+                                    <div class="info-label">Cómo obtenerlo</div>
+                                    <ol class="steps">
+                                        <li><span class="step-n">1</span>Escribe en una oración qué hace tu solución para resolver el problema (usa verbo de acción del usuario, no técnico).</li>
+                                        <li><span class="step-n">2</span>Define quién paga, cuánto y con qué frecuencia: comisión, suscripción, licencia, etc.</li>
+                                        <li><span class="step-n">3</span>Léelo en voz alta a alguien que no conoce el proyecto y verifica que lo comprenda.</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 04 Próximos pasos -->
+                    <div class="field-item" id="f1-4">
+                        <div class="field-header" onclick="toggleField('f1-4')">
+                            <span class="field-num">04</span>
+                            <div class="field-name">Próximos pasos</div>
+                            <svg class="field-chevron" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+                        </div>
+                        <div class="field-body">
+                            <div class="field-body-inner">
+                                <p class="guide-quote">¿Qué harás en las próximas horas para demostrar avance real?</p>
+                                <div class="info-block what">
+                                    <div class="info-label">Qué va aquí</div>
+                                    <p>Acciones concretas, medibles y realizables dentro del tiempo del hackathon. Responde: ¿qué construirás?, ¿qué usuarios reclutarás?, y ¿qué métrica de validación alcanzarás antes del cierre?</p>
+                                </div>
+                                <div class="info-block what-not">
+                                    <div class="info-label">Qué NO va aquí</div>
+                                    <p>Pasos vagos o de largo plazo: "queremos lanzar en 6 meses." Los próximos pasos del hackathon deben ejecutarse hoy o mañana, con un resultado observable que puedas demostrar.</p>
+                                </div>
+                                <div class="info-block how">
+                                    <div class="info-label">Cómo obtenerlo</div>
+                                    <ol class="steps">
+                                        <li><span class="step-n">1</span>Lista todo lo que el equipo podría hacer en 24–48 horas.</li>
+                                        <li><span class="step-n">2</span>Selecciona las 2–3 acciones que más evidencia de viabilidad generen.</li>
+                                        <li><span class="step-n">3</span>Define una meta observable para cada acción (ej. "3 transacciones simuladas con 10 usuarios").</li>
+                                        <li><span class="step-n">4</span>Asigna un responsable dentro del equipo para cada acción ahora mismo.</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div><!-- /field-accordion -->
+            </div>
+        </div>
+    </div><!-- /tool1 -->
+
+    <!-- ▸ HERRAMIENTA 2: 4 Preguntas Críticas -->
+    <div class="tool-card" id="tool2">
+        <div class="tool-header" onclick="toggleTool('tool2')">
+            <div class="tool-header-left">
+                <div class="tool-number">2</div>
+                <div>
+                    <div class="tool-title">4 Preguntas Críticas</div>
+                    <div class="tool-subtitle">El filtro de validación del jurado</div>
+                </div>
+            </div>
+            <div class="tool-chevron">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+        </div>
+        <div class="tool-body">
+            <div class="tool-body-inner">
+                <div class="field-accordion">
+
+                    <!-- Q01 -->
+                    <div class="field-item" id="q2-1">
+                        <div class="field-header" onclick="toggleField('q2-1')">
+                            <span class="field-num">01</span>
+                            <div class="field-name">¿Qué riesgo eliminamos?</div>
+                            <svg class="field-chevron" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+                        </div>
+                        <div class="field-body">
+                            <div class="field-body-inner">
+                                <div class="info-block what">
+                                    <div class="info-label">Qué se pregunta aquí</div>
+                                    <p>Identifica el riesgo, fricción o costo principal que vive el usuario hoy y que tu solución elimina directamente. No es sobre tu riesgo como startup, sino sobre el riesgo o dolor que experimenta la persona con el problema.</p>
+                                </div>
+                                <div class="info-block good">
+                                    <div class="info-label">Qué cuenta como buena respuesta</div>
+                                    <p>Específica, centrada en el usuario y conectada con el problema: "Eliminamos el riesgo de fraude en transacciones estudiantiles, que hoy ocurren sin ninguna garantía ni identidad verificada."</p>
+                                </div>
+                                <div class="info-block what-not">
+                                    <div class="info-label">Qué NO cuenta</div>
+                                    <p>Confundir el riesgo del usuario con el riesgo del negocio. "Eliminamos el riesgo de que nadie use nuestra app" es tu riesgo de startup, no el dolor del usuario. Mantén el foco en quien sufre el problema.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Q02 CRÍTICA -->
+                    <div class="field-item" id="q2-2">
+                        <div class="field-header" onclick="toggleField('q2-2')">
+                            <span class="field-num">02</span>
+                            <div class="field-name">¿Qué evidencia tenemos?</div>
+                            <span class="badge badge-red" style="margin-right:6px">CRÍTICA</span>
+                            <svg class="field-chevron" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+                        </div>
+                        <div class="field-body">
+                            <div class="field-body-inner">
+                                <div class="info-block what">
+                                    <div class="info-label">Qué se pregunta aquí</div>
+                                    <p>Detalla toda la evidencia recolectada para confirmar que el problema existe y que hay demanda real. Esta es la pregunta más importante del pitch: sin evidencia, el jurado no puede tomar en serio la propuesta.</p>
+                                </div>
+                                <div class="info-block good">
+                                    <div class="info-label">Qué cuenta como buena respuesta</div>
+                                    <p>Encuesta propia con muestra definida (mínimo 30 personas), entrevistas documentadas (mínimo 5), observación directa con datos registrados, o una combinación de fuentes primarias y secundarias bien conectadas al problema específico.</p>
+                                </div>
+                                <div class="info-block what-not">
+                                    <div class="info-label">Qué NO cuenta</div>
+                                    <p>"Intuimos que el problema existe porque nosotros lo vivimos." La experiencia personal del equipo no es evidencia investigada. Sin datos de otras personas, no puedes afirmar que el problema es generalizado.</p>
+                                </div>
+                                <div class="alert-box">
+                                    <span class="alert-icon">⚠️</span>
+                                    <p><strong>Alerta especial:</strong> Sin evidencia real y documentada, el pitch no está listo para presentarse al jurado. Esta es la pregunta que más proyectos pierde. Si no tienes datos propios, pausa todo lo demás y ve a recolectarlos ahora mismo.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Q03 -->
+                    <div class="field-item" id="q2-3">
+                        <div class="field-header" onclick="toggleField('q2-3')">
+                            <span class="field-num">03</span>
+                            <div class="field-name">¿Qué necesitamos?</div>
+                            <svg class="field-chevron" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+                        </div>
+                        <div class="field-body">
+                            <div class="field-body-inner">
+                                <div class="info-block what">
+                                    <div class="info-label">Qué se pregunta aquí</div>
+                                    <p>Identifica los recursos, alianzas, permisos o validaciones que necesitas para pasar al siguiente nivel. No es una lista de deseos: es lo que sin lo cual no puedes escalar o ejecutar el piloto.</p>
+                                </div>
+                                <div class="info-block good">
+                                    <div class="info-label">Qué cuenta como buena respuesta</div>
+                                    <p>Específico y accionable: "Necesitamos validación institucional del ITSM para acceder al directorio estudiantil y ejecutar el piloto de forma oficial." Conectado al modelo de negocio y a la siguiente etapa del proyecto.</p>
+                                </div>
+                                <div class="info-block what-not">
+                                    <div class="info-label">Qué NO cuenta</div>
+                                    <p>Listar recursos técnicos o financieros sin precisar para qué o cuándo. "Necesitamos dinero e inversión" sin monto ni propósito no da información útil al jurado.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Q04 -->
+                    <div class="field-item" id="q2-4">
+                        <div class="field-header" onclick="toggleField('q2-4')">
+                            <span class="field-num">04</span>
+                            <div class="field-name">¿Qué sigue?</div>
+                            <svg class="field-chevron" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+                        </div>
+                        <div class="field-body">
+                            <div class="field-body-inner">
+                                <div class="info-block what">
+                                    <div class="info-label">Qué se pregunta aquí</div>
+                                    <p>Define claramente qué ejecutarás inmediatamente después del pitch o durante el hackathon. Muestra que tienes momentum: ya estás en marcha, no solo planeando. El jurado quiere ver que el equipo actúa.</p>
+                                </div>
+                                <div class="info-block good">
+                                    <div class="info-label">Qué cuenta como buena respuesta</div>
+                                    <p>Acciones con tiempo y resultado esperado: "Esta tarde terminamos el prototipo Figma. Hoy reclutamos 10 usuarios voluntarios. Meta: 3 transacciones simuladas antes del cierre." Granularidad de horas, no de meses.</p>
+                                </div>
+                                <div class="info-block what-not">
+                                    <div class="info-label">Qué NO cuenta</div>
+                                    <p>Respuestas de largo plazo: "en el siguiente semestre lanzaremos la app." El jurado del hackathon evalúa lo que harás ahora mismo, no lo que planeas hacer después del evento.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div><!-- /field-accordion -->
+            </div>
+        </div>
+    </div><!-- /tool2 -->
+
+    <!-- ▸ HERRAMIENTA 3: Criterios de Aceptación -->
+    <div class="tool-card" id="tool3">
+        <div class="tool-header" onclick="toggleTool('tool3')">
+            <div class="tool-header-left">
+                <div class="tool-number">3</div>
+                <div>
+                    <div class="tool-title">Criterios de Aceptación</div>
+                    <div class="tool-subtitle">Checklist interactivo de evaluación — 5 criterios</div>
+                </div>
+            </div>
+            <div class="tool-chevron">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+        </div>
+        <div class="tool-body">
+            <div class="tool-body-inner" style="padding-top:18px">
+
+                <div class="checklist-top">
+                    <div>
+                        <div class="counter-label">Criterios cumplidos</div>
+                        <div class="counter-num" id="criteria-counter">0 de 5</div>
+                    </div>
+                    <div id="criteria-status-badge"></div>
+                </div>
+
+                <div class="checklist-items">
+                    <div class="checklist-item" id="c1" onclick="toggleCriteria('c1')">
+                        <div class="check-box"><span class="check-mark">✓</span></div>
+                        <div>
+                            <div class="check-code">C1</div>
+                            <div class="check-name">Problema con dato real</div>
+                            <div class="check-desc">El problema está respaldado por al menos un dato concreto: porcentaje, frecuencia, encuesta o fuente.</div>
+                        </div>
+                    </div>
+                    <div class="checklist-item" id="c2" onclick="toggleCriteria('c2')">
+                        <div class="check-box"><span class="check-mark">✓</span></div>
+                        <div>
+                            <div class="check-code">C2</div>
+                            <div class="check-name">Solución responde al problema</div>
+                            <div class="check-desc">Hay una conexión directa y lógica entre el problema identificado y la solución propuesta.</div>
+                        </div>
+                    </div>
+                    <div class="checklist-item" id="c3" onclick="toggleCriteria('c3')">
+                        <div class="check-box"><span class="check-mark">✓</span></div>
+                        <div>
+                            <div class="check-code">C3</div>
+                            <div class="check-name">Modelo en 2 oraciones</div>
+                            <div class="check-desc">El modelo de negocio puede explicarse en máximo dos oraciones: qué hace y cómo genera ingreso.</div>
+                        </div>
+                    </div>
+                    <div class="checklist-item" id="c4" onclick="toggleCriteria('c4')">
+                        <div class="check-box"><span class="check-mark">✓</span></div>
+                        <div>
+                            <div class="check-code">C4</div>
+                            <div class="check-name">Evidencia o prototipo</div>
+                            <div class="check-desc">El equipo tiene al menos uno: datos de investigación propia, prototipo funcional o prueba de concepto demostrable.</div>
+                        </div>
+                    </div>
+                    <div class="checklist-item" id="c5" onclick="toggleCriteria('c5')">
+                        <div class="check-box"><span class="check-mark">✓</span></div>
+                        <div>
+                            <div class="check-code">C5</div>
+                            <div class="check-name">Próximos pasos concretos</div>
+                            <div class="check-desc">El equipo tiene al menos dos acciones específicas y ejecutables dentro del tiempo del hackathon.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="checklist-feedback" id="criteria-feedback"></div>
+
+            </div>
+        </div>
+    </div><!-- /tool3 -->
+
+</section>
+
+<hr class="divider">
+
+<!-- ══ SECCIÓN 2: EJEMPLOS REALES ══════════════════════════════════ -->
+<section class="section" id="ejemplos-reales">
+    <div class="section-header">
+        <div class="section-number">02 — Sección</div>
+        <h2 class="section-title">Ejemplos reales</h2>
+        <p class="section-desc">Tres ideas universitarias con las tres herramientas completamente llenadas. Selecciona una para explorarla.</p>
+    </div>
+
+    <!-- Desktop tabs -->
+    <div class="tabs-nav">
+        <button class="tab-btn active" onclick="switchTab('mercado',this)">
+            <span class="tab-tag">Tab A</span>
+            MercadoCampus
+        </button>
+        <button class="tab-btn" onclick="switchTab('salud',this)">
+            <span class="tab-tag">Tab B</span>
+            SaludUni
+        </button>
+        <button class="tab-btn" onclick="switchTab('ruta',this)">
+            <span class="tab-tag">Tab C</span>
+            RutaVerde
+        </button>
+    </div>
+
+    <!-- Mobile select -->
+    <select class="tabs-select" onchange="switchTab(this.value,null)">
+        <option value="mercado">Tab A — MercadoCampus · Marketplace estudiantil</option>
+        <option value="salud">Tab B — SaludUni · Bienestar mental universitario</option>
+        <option value="ruta">Tab C — RutaVerde · Carpooling universitario</option>
+    </select>
+
+    <!-- ══ TAB A: MercadoCampus ══ -->
+    <div class="tab-panel active" id="tab-mercado">
+
+        <div class="ex-card">
+            <div class="ex-card-header">
+                <div class="ex-icon">📋</div>
+                <div class="ex-card-title">Pitching Canvas — MercadoCampus</div>
+            </div>
+            <div class="ex-body">
+                <table class="canvas-table">
+                    <thead><tr><th>Campo</th><th>Contenido llenado</th></tr></thead>
+                    <tbody>
+                        <tr>
+                            <td><div class="cf-num">01</div><div class="cf-label">Problema validado</div></td>
+                            <td class="cf-content">El 70% de los estudiantes compra o vende artículos entre semestres por WhatsApp sin garantías. 3 de cada 10 transacciones resultan en conflicto o pérdida (encuesta propia, 120 respuestas, ITSM 2025).</td>
+                        </tr>
+                        <tr>
+                            <td><div class="cf-num">02</div><div class="cf-label">Evidencia</div></td>
+                            <td class="cf-content">Encuesta a 120 estudiantes: 70% compra/vende entre pares, 30% con conflicto. 8 entrevistas confirmaron que el problema central es el anonimato. Grupo Facebook "Compra-Venta ITSM" con 340 miembros activos sin sistema de reputación.</td>
+                        </tr>
+                        <tr>
+                            <td><div class="cf-num">03</div><div class="cf-label">Modelo</div></td>
+                            <td class="cf-content">App de marketplace exclusiva para estudiantes verificados con correo institucional. Comisión del 4% por transacción + membresía Vendedor Pro a 79 pesos/mes.</td>
+                        </tr>
+                        <tr>
+                            <td><div class="cf-num">04</div><div class="cf-label">Próximos pasos</div></td>
+                            <td class="cf-content">Prototipo en Figma con 3 flujos principales. Meta: 3 transacciones simuladas con 10 usuarios voluntarios antes del cierre del hackathon.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="ex-card">
+            <div class="ex-card-header">
+                <div class="ex-icon">❓</div>
+                <div class="ex-card-title">4 Preguntas Críticas — MercadoCampus</div>
+            </div>
+            <div class="ex-body">
+                <div class="cq-list">
+                    <div class="cq-item">
+                        <div class="cq-top"><span class="cq-num">01</span><span class="cq-question">¿Qué riesgo eliminamos?</span></div>
+                        <p class="cq-answer">La desconfianza por anonimato en las transacciones estudiantiles. Con verificación de identidad institucional, cada comprador y vendedor es un estudiante real y rastreable, eliminando el fraude y los conflictos sin resolución.</p>
+                    </div>
+                    <div class="cq-item critical">
+                        <div class="cq-top"><span class="cq-num">02</span><span class="cq-question">¿Qué evidencia tenemos?</span><span class="badge badge-red">CRÍTICA</span></div>
+                        <p class="cq-answer">Encuesta propia a 120 estudiantes del ITSM (2025): 70% compra/vende entre pares, 30% con conflicto. 8 entrevistas confirmaron el anonimato como barrera central. Observación del grupo Facebook "Compra-Venta ITSM": 340 miembros, quejas frecuentes, sin sistema de reputación.</p>
+                    </div>
+                    <div class="cq-item">
+                        <div class="cq-top"><span class="cq-num">03</span><span class="cq-question">¿Qué necesitamos?</span></div>
+                        <p class="cq-answer">Validación institucional del ITSM para acceder al directorio de correos estudiantiles y operar el sistema de verificación de identidad como piloto oficial dentro del campus.</p>
+                    </div>
+                    <div class="cq-item">
+                        <div class="cq-top"><span class="cq-num">04</span><span class="cq-question">¿Qué sigue?</span></div>
+                        <p class="cq-answer">Prototipo Figma con 3 flujos (registro, publicación, transacción) + piloto con 10 usuarios voluntarios hoy. Meta: 3 transacciones simuladas documentadas antes del cierre del hackathon.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ex-card">
+            <div class="ex-card-header">
+                <div class="ex-icon">✅</div>
+                <div class="ex-card-title">Criterios de Aceptación — MercadoCampus</div>
+            </div>
+            <div class="ex-body">
+                <div class="crit-list">
+                    <div class="crit-item">
+                        <div class="crit-top"><span class="crit-code">C1</span><span class="crit-name">Problema con dato real</span><span class="badge badge-green">✅ SÍ CUMPLE</span></div>
+                        <p class="crit-just">Encuesta propia a 120 estudiantes del ITSM: 70% compra/vende entre pares, 30% con conflicto. Dato específico, muestra definida, contexto local.</p>
+                    </div>
+                    <div class="crit-item">
+                        <div class="crit-top"><span class="crit-code">C2</span><span class="crit-name">Solución responde al problema</span><span class="badge badge-green">✅ SÍ CUMPLE</span></div>
+                        <p class="crit-just">El problema es el anonimato; la solución es la verificación con correo institucional. Conexión directa: identidad verificada elimina el riesgo de fraude entre pares.</p>
+                    </div>
+                    <div class="crit-item">
+                        <div class="crit-top"><span class="crit-code">C3</span><span class="crit-name">Modelo en 2 oraciones</span><span class="badge badge-green">✅ SÍ CUMPLE</span></div>
+                        <p class="crit-just">App exclusiva para estudiantes verificados (qué hace) + comisión 4% y membresía 79 pesos/mes (cómo genera ingreso). Claro y compacto.</p>
+                    </div>
+                    <div class="crit-item">
+                        <div class="crit-top"><span class="crit-code">C4</span><span class="crit-name">Evidencia o prototipo</span><span class="badge badge-green">✅ SÍ CUMPLE</span></div>
+                        <p class="crit-just">Encuesta + 8 entrevistas + observación de comunidad existente + prototipo Figma en construcción. Cumple por doble vía: evidencia y artefacto.</p>
+                    </div>
+                    <div class="crit-item">
+                        <div class="crit-top"><span class="crit-code">C5</span><span class="crit-name">Próximos pasos concretos</span><span class="badge badge-green">✅ SÍ CUMPLE</span></div>
+                        <p class="crit-just">Prototipo Figma + 10 usuarios voluntarios + 3 transacciones simuladas. Todas ejecutables dentro del hackathon con meta observable.</p>
+                    </div>
+                </div>
+                <div class="verdict proceed">
+                    <div class="verdict-lbl">Veredicto final</div>
+                    <div class="verdict-txt">PROCEDE</div>
+                    <div class="verdict-note">Cumple los 5 criterios. Pitch listo para presentar al jurado.</div>
+                </div>
+            </div>
+        </div>
+
+    </div><!-- /tab-mercado -->
+
+    <!-- ══ TAB B: SaludUni ══ -->
+    <div class="tab-panel" id="tab-salud">
+
+        <div class="ex-card">
+            <div class="ex-card-header">
+                <div class="ex-icon">📋</div>
+                <div class="ex-card-title">Pitching Canvas — SaludUni</div>
+            </div>
+            <div class="ex-body">
+                <table class="canvas-table">
+                    <thead><tr><th>Campo</th><th>Contenido llenado</th></tr></thead>
+                    <tbody>
+                        <tr>
+                            <td><div class="cf-num">01</div><div class="cf-label">Problema validado</div></td>
+                            <td class="cf-content">El 62% de estudiantes reporta estrés alto durante el semestre pero solo el 11% accede a apoyo psicológico. Lista de espera de 3 a 6 semanas en servicios universitarios (ANUIES 2023).</td>
+                        </tr>
+                        <tr>
+                            <td><div class="cf-num">02</div><div class="cf-label">Evidencia</div></td>
+                            <td class="cf-content">Estadística ANUIES 2023. 12 entrevistas a estudiantes: barrera principal es el estigma y el tiempo de espera. Encuesta a 80 estudiantes: 74% preferiría apoyo anónimo y disponible inmediatamente.</td>
+                        </tr>
+                        <tr>
+                            <td><div class="cf-num">03</div><div class="cf-label">Modelo</div></td>
+                            <td class="cf-content">Plataforma web gratuita para estudiantes con chat entre pares capacitados y sesiones exprés de 20 minutos. Licencia anual de 18,000 pesos por campus pagada por la institución.</td>
+                        </tr>
+                        <tr>
+                            <td><div class="cf-num">04</div><div class="cf-label">Próximos pasos</div></td>
+                            <td class="cf-content">Landing page funcional + primer módulo de ejercicios de manejo del estrés operativo. Reclutar 5 estudiantes como pares de apoyo capacitados antes del cierre del hackathon.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="ex-card">
+            <div class="ex-card-header">
+                <div class="ex-icon">❓</div>
+                <div class="ex-card-title">4 Preguntas Críticas — SaludUni</div>
+            </div>
+            <div class="ex-body">
+                <div class="cq-list">
+                    <div class="cq-item">
+                        <div class="cq-top"><span class="cq-num">01</span><span class="cq-question">¿Qué riesgo eliminamos?</span></div>
+                        <p class="cq-answer">El riesgo de que estudiantes con estrés alto no accedan a ningún apoyo por estigma social y tiempos de espera prohibitivos. Con anonimato total y disponibilidad inmediata, la barrera de entrada desaparece completamente.</p>
+                    </div>
+                    <div class="cq-item critical">
+                        <div class="cq-top"><span class="cq-num">02</span><span class="cq-question">¿Qué evidencia tenemos?</span><span class="badge badge-red">CRÍTICA</span></div>
+                        <p class="cq-answer">Estadística ANUIES 2023: 62% estrés alto, solo 11% accede a apoyo. 12 entrevistas a estudiantes del campus: estigma y tiempo de espera son las dos barreras principales. Encuesta propia a 80 estudiantes: 74% preferiría apoyo anónimo e inmediato.</p>
+                    </div>
+                    <div class="cq-item">
+                        <div class="cq-top"><span class="cq-num">03</span><span class="cq-question">¿Qué necesitamos?</span></div>
+                        <p class="cq-answer">Aval institucional del ITSM para operar dentro del campus, acceder a la comunidad estudiantil como plataforma validada y garantizar la privacidad de los datos de los usuarios bajo normativa vigente.</p>
+                    </div>
+                    <div class="cq-item">
+                        <div class="cq-top"><span class="cq-num">04</span><span class="cq-question">¿Qué sigue?</span></div>
+                        <p class="cq-answer">Landing page funcional + módulo 1 de ejercicios de manejo del estrés operativo hoy. Reclutar y confirmar 5 estudiantes como pares de apoyo capacitados antes del cierre del hackathon.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ex-card">
+            <div class="ex-card-header">
+                <div class="ex-icon">✅</div>
+                <div class="ex-card-title">Criterios de Aceptación — SaludUni</div>
+            </div>
+            <div class="ex-body">
+                <div class="crit-list">
+                    <div class="crit-item">
+                        <div class="crit-top"><span class="crit-code">C1</span><span class="crit-name">Problema con dato real</span><span class="badge badge-green">✅ SÍ CUMPLE</span></div>
+                        <p class="crit-just">ANUIES 2023: 62% estrés alto, 11% accede a apoyo. Dato de fuente reconocida complementado con evidencia propia del campus.</p>
+                    </div>
+                    <div class="crit-item">
+                        <div class="crit-top"><span class="crit-code">C2</span><span class="crit-name">Solución responde al problema</span><span class="badge badge-green">✅ SÍ CUMPLE</span></div>
+                        <p class="crit-just">Las barreras son estigma y tiempo de espera. La solución ofrece anonimato total y acceso inmediato. Conexión directa con los hallazgos de las 12 entrevistas.</p>
+                    </div>
+                    <div class="crit-item">
+                        <div class="crit-top"><span class="crit-code">C3</span><span class="crit-name">Modelo en 2 oraciones</span><span class="badge badge-green">✅ SÍ CUMPLE</span></div>
+                        <p class="crit-just">Plataforma gratuita con pares y sesiones de 20 min (qué hace) + licencia anual de 18,000 pesos por campus (cómo se sostiene). Modelo B2B institucional claro.</p>
+                    </div>
+                    <div class="crit-item">
+                        <div class="crit-top"><span class="crit-code">C4</span><span class="crit-name">Evidencia o prototipo</span><span class="badge badge-orange">⚠️ PARCIAL</span></div>
+                        <p class="crit-just">Solo landing page en construcción, sin prototipo funcional completo del módulo de chat o sesiones. Cumple por evidencia de investigación (entrevistas + encuesta), pero el artefacto tecnológico es incompleto.</p>
+                    </div>
+                    <div class="crit-item">
+                        <div class="crit-top"><span class="crit-code">C5</span><span class="crit-name">Próximos pasos concretos</span><span class="badge badge-green">✅ SÍ CUMPLE</span></div>
+                        <p class="crit-just">Landing page + módulo 1 + 5 pares de apoyo reclutados. Tres acciones específicas con resultado observable dentro del hackathon.</p>
+                    </div>
+                </div>
+                <div class="verdict proceed">
+                    <div class="verdict-lbl">Veredicto final</div>
+                    <div class="verdict-txt">PROCEDE</div>
+                    <div class="verdict-note">Cumple 4 criterios completos. Observación en C4: prototipo funcional incompleto. El pitch puede avanzar; el equipo debe completar el artefacto.</div>
+                </div>
+            </div>
+        </div>
+
+    </div><!-- /tab-salud -->
+
+    <!-- ══ TAB C: RutaVerde ══ -->
+    <div class="tab-panel" id="tab-ruta">
+
+        <div class="ex-card">
+            <div class="ex-card-header">
+                <div class="ex-icon">📋</div>
+                <div class="ex-card-title">Pitching Canvas — RutaVerde</div>
+            </div>
+            <div class="ex-body">
+                <table class="canvas-table">
+                    <thead><tr><th>Campo</th><th>Contenido llenado</th></tr></thead>
+                    <tbody>
+                        <tr>
+                            <td><div class="cf-num">01</div><div class="cf-label">Problema validado</div></td>
+                            <td class="cf-content">El 58% de estudiantes que viven a menos de 5 km llegan en auto particular. El campus pierde 40 minutos per cápita diarios en tráfico de ingreso (encuesta campus, 200 respuestas). El 34% cambiaría su transporte si hubiera una opción conveniente.</td>
+                        </tr>
+                        <tr>
+                            <td><div class="cf-num">02</div><div class="cf-label">Evidencia</div></td>
+                            <td class="cf-content">Encuesta a 200 estudiantes del campus. Observación de estacionamiento: 85% de capacidad usada en hora pico. 10 entrevistas: la barrera es no conocer a quién compartir el viaje ni cómo coordinarlo.</td>
+                        </tr>
+                        <tr>
+                            <td><div class="cf-num">03</div><div class="cf-label">Modelo</div></td>
+                            <td class="cf-content">App de carpooling exclusiva para la comunidad universitaria verificada. Gratuita para usuarios ocasionales, suscripción conductores frecuentes a 39 pesos/mes más beneficios con patrocinadores del campus.</td>
+                        </tr>
+                        <tr>
+                            <td><div class="cf-num">04</div><div class="cf-label">Próximos pasos</div></td>
+                            <td class="cf-content">Formulario de registro + mapa de 3 rutas piloto diseñado. Reclutar 10 conductores voluntarios. Meta: organizar 1 ruta real de prueba durante el hackathon.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="ex-card">
+            <div class="ex-card-header">
+                <div class="ex-icon">❓</div>
+                <div class="ex-card-title">4 Preguntas Críticas — RutaVerde</div>
+            </div>
+            <div class="ex-body">
+                <div class="cq-list">
+                    <div class="cq-item">
+                        <div class="cq-top"><span class="cq-num">01</span><span class="cq-question">¿Qué riesgo eliminamos?</span></div>
+                        <p class="cq-answer">El riesgo de masa crítica insuficiente de conductores al inicio. Al enfocarnos en comunidad universitaria verificada, reducimos la fricción de coordinación y generamos confianza entre participantes que ya comparten contexto.</p>
+                    </div>
+                    <div class="cq-item critical">
+                        <div class="cq-top"><span class="cq-num">02</span><span class="cq-question">¿Qué evidencia tenemos?</span><span class="badge badge-red">CRÍTICA</span></div>
+                        <p class="cq-answer">Encuesta a 200 estudiantes del campus: 58% llegan en auto, 34% cambiaría su transporte. Observación directa del estacionamiento: 85% de capacidad en hora pico. 10 entrevistas: la barrera es la coordinación y el desconocimiento entre compañeros.</p>
+                    </div>
+                    <div class="cq-item">
+                        <div class="cq-top"><span class="cq-num">03</span><span class="cq-question">¿Qué necesitamos?</span></div>
+                        <p class="cq-answer">Acuerdo con la administración del campus para validar el piloto, acceder a zonas del estacionamiento como punto de encuentro y comunicar el proyecto a la comunidad por canales oficiales.</p>
+                    </div>
+                    <div class="cq-item">
+                        <div class="cq-top"><span class="cq-num">04</span><span class="cq-question">¿Qué sigue?</span></div>
+                        <p class="cq-answer">Formulario de registro activo + mapa de 3 rutas piloto diseñado. Reclutar 10 conductores voluntarios hoy. Meta: 1 ruta real de prueba coordinada y ejecutada durante el hackathon.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ex-card">
+            <div class="ex-card-header">
+                <div class="ex-icon">✅</div>
+                <div class="ex-card-title">Criterios de Aceptación — RutaVerde</div>
+            </div>
+            <div class="ex-body">
+                <div class="crit-list">
+                    <div class="crit-item">
+                        <div class="crit-top"><span class="crit-code">C1</span><span class="crit-name">Problema con dato real</span><span class="badge badge-green">✅ SÍ CUMPLE</span></div>
+                        <p class="crit-just">Encuesta a 200 estudiantes: 58% en auto, 40 min perdidos diarios, 34% dispuesto a cambiar. Tres datos cuantitativos propios con muestra sólida.</p>
+                    </div>
+                    <div class="crit-item">
+                        <div class="crit-top"><span class="crit-code">C2</span><span class="crit-name">Solución responde al problema</span><span class="badge badge-green">✅ SÍ CUMPLE</span></div>
+                        <p class="crit-just">La barrera es la coordinación y el desconocimiento mutuo. La app conecta comunidad verificada y facilita la coordinación. Conexión directa con hallazgos de las 10 entrevistas.</p>
+                    </div>
+                    <div class="crit-item">
+                        <div class="crit-top"><span class="crit-code">C3</span><span class="crit-name">Modelo en 2 oraciones</span><span class="badge badge-green">✅ SÍ CUMPLE</span></div>
+                        <p class="crit-just">App de carpooling universitario verificado (qué hace) + gratuita para pasajeros, suscripción 39 pesos/mes para conductores frecuentes (cómo genera ingreso). Modelo freemium claro.</p>
+                    </div>
+                    <div class="crit-item">
+                        <div class="crit-top"><span class="crit-code">C4</span><span class="crit-name">Evidencia o prototipo</span><span class="badge badge-green">✅ SÍ CUMPLE</span></div>
+                        <p class="crit-just">Encuesta + observación de estacionamiento + 10 entrevistas + formulario de registro activo + mapa de rutas diseñado. Cumple por múltiples vías simultáneas.</p>
+                    </div>
+                    <div class="crit-item">
+                        <div class="crit-top"><span class="crit-code">C5</span><span class="crit-name">Próximos pasos concretos</span><span class="badge badge-green">✅ SÍ CUMPLE</span></div>
+                        <p class="crit-just">Formulario activo + mapa de rutas + 10 conductores + 1 ruta real de prueba. Cuatro acciones concretas con resultado observable durante el hackathon.</p>
+                    </div>
+                </div>
+                <div class="verdict proceed">
+                    <div class="verdict-lbl">Veredicto final</div>
+                    <div class="verdict-txt">PROCEDE</div>
+                    <div class="verdict-note">Cumple los 5 criterios. Evidencia sólida y próximos pasos ejecutables. Pitch listo para presentar.</div>
+                </div>
+            </div>
+        </div>
+
+    </div><!-- /tab-ruta -->
+
+</section>
+
+</main>
+
+<!-- ══ FOOTER ══════════════════════════════════════════════════════ -->
+<footer>
+    <strong>Hackathon 2026</strong> · Taller de Pitch · Business Design Etapa 6
+</footer>
+
+<!-- ══ FAB ═════════════════════════════════════════════════════════ -->
+<button class="fab" id="fab" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Subir al inicio" aria-label="Subir al inicio">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+
+<script>
+    // ── Tool accordion ──────────────────────────────────────────────
+    function toggleTool(id) {
+        document.getElementById(id).classList.toggle('open');
+    }
+
+    // ── Field accordion ─────────────────────────────────────────────
+    function toggleField(id) {
+        document.getElementById(id).classList.toggle('open');
+    }
+
+    // ── Tabs ────────────────────────────────────────────────────────
+    const tabMap = { mercado: 0, salud: 1, ruta: 2 };
+
+    function switchTab(name, btn) {
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+        document.getElementById('tab-' + name).classList.add('active');
+        if (btn) {
+            btn.classList.add('active');
+        } else {
+            const btns = document.querySelectorAll('.tab-btn');
+            btns[tabMap[name]].classList.add('active');
+        }
+    }
+
+    // ── Criteria checklist ──────────────────────────────────────────
+    const CRITERIA_IDS = ['c1', 'c2', 'c3', 'c4', 'c5'];
+
+    function loadCriteria() {
+        CRITERIA_IDS.forEach(id => {
+            if (localStorage.getItem('pitch_' + id) === 'true') {
+                document.getElementById(id).classList.add('checked');
+            }
+        });
+        updateCriteriaUI();
+    }
+
+    function toggleCriteria(id) {
+        const el = document.getElementById(id);
+        el.classList.toggle('checked');
+        localStorage.setItem('pitch_' + id, el.classList.contains('checked'));
+        updateCriteriaUI();
+    }
+
+    function updateCriteriaUI() {
+        let count = 0, hasC1 = false, hasC2 = false;
+
+        CRITERIA_IDS.forEach(id => {
+            const checked = document.getElementById(id).classList.contains('checked');
+            if (checked) count++;
+            if (id === 'c1' && checked) hasC1 = true;
+            if (id === 'c2' && checked) hasC2 = true;
+        });
+
+        document.getElementById('criteria-counter').textContent = count + ' de 5';
+
+        const fb = document.getElementById('criteria-feedback');
+        const sb = document.getElementById('criteria-status-badge');
+
+        fb.className = 'checklist-feedback';
+        sb.innerHTML = '';
+
+        if (hasC1 && hasC2) {
+            fb.className = 'checklist-feedback show-green';
+            fb.textContent = '✅ Mínimo cumplido — C1 y C2 marcados. El pitch tiene base suficiente para presentarse.';
+            sb.innerHTML = '<span class="badge badge-green">Mínimo cumplido</span>';
+        } else if (hasC1 || hasC2) {
+            fb.className = 'checklist-feedback show-red';
+            fb.textContent = '⚠️ Sin C1 y C2 el pitch no procede. Necesitas problema con dato real Y solución alineada.';
+            sb.innerHTML = '<span class="badge badge-red">Incompleto</span>';
+        }
+    }
+
+    // ── FAB visibility ──────────────────────────────────────────────
+    window.addEventListener('scroll', () => {
+        document.getElementById('fab').classList.toggle('visible', window.scrollY > 300);
+    }, { passive: true });
+
+    // ── Nav active highlight ────────────────────────────────────────
+    const navLinks = document.querySelectorAll('.nav-links a');
+    const sections = document.querySelectorAll('section.section');
+
+    window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(s => {
+            if (window.scrollY >= s.offsetTop - 90) current = s.id;
+        });
+        navLinks.forEach(a => {
+            a.classList.toggle('active', a.dataset.section === current);
+        });
+    }, { passive: true });
+
+    // ── Init ────────────────────────────────────────────────────────
+    loadCriteria();
+</script>
+</body>
+</html>
