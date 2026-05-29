@@ -311,6 +311,28 @@
     }
     .ex-banner.bad small { color:#e08080; }
     .ex-banner.good small { color:#74c99a; }
+    .ex-banner.pitch {
+      background:rgba(201,168,76,.1); border:1px solid rgba(201,168,76,.4);
+      color:var(--gold);
+    }
+    .ex-banner.pitch small { color:var(--gold-l); }
+
+    /* ─── PITCH SCRIPT ──────────────────────────────────────────── */
+    .pitch-script { display:grid; gap:0; }
+    .pitch-block { display:flex; gap:14px; padding:16px 0; border-bottom:1px solid rgba(255,255,255,.05); align-items:flex-start; }
+    .pitch-block:last-child { border-bottom:none; }
+    .pb-tag { flex-shrink:0; width:96px; padding-top:2px; }
+    .pb-tag-inner { font-size:.6rem; font-weight:800; letter-spacing:1px; text-transform:uppercase; padding:3px 8px; border-radius:20px; white-space:nowrap; display:inline-block; }
+    .pb-tag-inner.apertura { background:rgba(138,155,191,.12); color:var(--muted); border:1px solid rgba(138,155,191,.25) }
+    .pb-tag-inner.hook     { background:rgba(201,168,76,.14); color:var(--gold); border:1px solid rgba(201,168,76,.3) }
+    .pb-tag-inner.problema { background:rgba(224,82,82,.14); color:var(--red); border:1px solid rgba(224,82,82,.3) }
+    .pb-tag-inner.solucion { background:rgba(76,175,125,.14); color:var(--green); border:1px solid rgba(76,175,125,.3) }
+    .pb-tag-inner.modelo   { background:rgba(101,126,196,.14); color:#8fabd8; border:1px solid rgba(101,126,196,.3) }
+    .pb-tag-inner.traccion { background:rgba(240,146,58,.14); color:var(--orange); border:1px solid rgba(240,146,58,.3) }
+    .pb-tag-inner.cierre   { background:rgba(201,168,76,.14); color:var(--gold); border:1px solid rgba(201,168,76,.3) }
+    .pb-text { font-size:.88rem; color:var(--sec); line-height:1.72; flex:1; min-width:0; }
+    .pb-text strong { color:var(--text); font-weight:700; }
+    .pb-note { font-size:.72rem; color:var(--muted); margin-top:5px; font-style:italic; }
 
     /* ─── EXAMPLE CARDS ─────────────────────────────────────────── */
     .ex-card {
@@ -816,6 +838,9 @@
     <button class="tab-btn" onclick="switchTab('ruta',this)">
       <span class="tab-tag">Tab C · ✅ Bien hecho</span>RutaVerde
     </button>
+    <button class="tab-btn" onclick="switchTab('ecoplato',this)">
+      <span class="tab-tag">Tab D · 🎯 Pitch final</span>EcoPlato
+    </button>
   </div>
 
   <!-- Mobile select -->
@@ -823,6 +848,7 @@
     <option value="mercado">Tab A · ✅ Bien hecho — MercadoCampus</option>
     <option value="salud">Tab B · ❌ Mal hecho — SaludUni</option>
     <option value="ruta">Tab C · ✅ Bien hecho — RutaVerde</option>
+    <option value="ecoplato">Tab D · 🎯 Pitch final — EcoPlato</option>
   </select>
 
   <!-- ══════════════════════════════════
@@ -1089,6 +1115,127 @@
     </div>
 
   </div><!-- /tab-ruta -->
+
+  <!-- ══════════════════════════════════
+       TAB D — EcoPlato 🎯 PITCH FINAL
+  ══════════════════════════════════════ -->
+  <div class="tab-panel" id="tab-ecoplato">
+
+    <div class="ex-banner pitch">
+      <span class="ex-banner-ico">🎯</span>
+      <div class="ex-banner-body">
+        Pitch Final Completo — EcoPlato
+        <small>Resultado de combinar las tres herramientas: Canvas + 4 Preguntas Críticas + Elevator Pitch. Cada línea está anotada con su origen para que identifiques de dónde viene cada parte.</small>
+      </div>
+    </div>
+
+    <!-- Pitch script anotado -->
+    <div class="ex-card">
+      <div class="ex-hd"><div class="ex-ico">🎤</div><div class="ex-title">Script del Pitch — EcoPlato (anotado)</div></div>
+      <div class="ex-body">
+        <div class="pitch-script">
+
+          <div class="pitch-block">
+            <div class="pb-tag"><span class="pb-tag-inner apertura">Apertura</span></div>
+            <div class="pb-text">
+              <strong>Hola. Somos el Equipo 1, fundadores de EcoPlato.</strong>
+              <div class="pb-note">Presentación del equipo. Breve, directa, con nombre de la solución desde el inicio.</div>
+            </div>
+          </div>
+
+          <div class="pitch-block">
+            <div class="pb-tag"><span class="pb-tag-inner hook">Hook</span></div>
+            <div class="pb-text">
+              <strong>¿Sabías que los restaurantes de nuestra ciudad tiran a la basura más de 10 toneladas de comida en perfecto estado cada día, mientras que miles de estudiantes y jóvenes profesionales buscan opciones de comida rápida y económica?</strong>
+              <div class="pb-note">Pregunta que abre con datos reales. Activa la atención y presenta el problema sin decir "tenemos un problema". Viene del Campo 01 del Canvas y de la Pregunta Crítica 02 (evidencia).</div>
+            </div>
+          </div>
+
+          <div class="pitch-block">
+            <div class="pb-tag"><span class="pb-tag-inner solucion">Solución</span></div>
+            <div class="pb-text">
+              <strong>EcoPlato es una aplicación móvil que conecta a restaurantes que tienen excedentes de comida al final del día con usuarios que buscan comprar platos de calidad con un 50% de descuento.</strong>
+              <div class="pb-note">Solución en una sola oración: quién, qué y para qué. Viene del Campo 03 del Canvas (Modelo/Solución).</div>
+            </div>
+          </div>
+
+          <div class="pitch-block">
+            <div class="pb-tag"><span class="pb-tag-inner modelo">Modelo</span></div>
+            <div class="pb-text">
+              <strong>A diferencia de las aplicaciones de delivery tradicionales, nosotros no solo generamos ingresos adicionales para los restaurantes, sino que ayudamos a reducir la huella de carbono. Cobramos una pequeña comisión del 10% por cada transacción.</strong>
+              <div class="pb-note">Diferenciador + modelo de negocio. El "a diferencia de…" es una estructura clave del Elevator Pitch. La comisión responde a "¿cómo ganan dinero?", del Campo 03 del Canvas.</div>
+            </div>
+          </div>
+
+          <div class="pitch-block">
+            <div class="pb-tag"><span class="pb-tag-inner traccion">Tracción</span></div>
+            <div class="pb-text">
+              <strong>En solo tres meses de prueba beta, hemos sumado a 50 restaurantes y completado más de 2,000 pedidos.</strong>
+              <div class="pb-note">Evidencia de validación real. Responde directamente a la Pregunta Crítica 02 (¿qué evidencia tienes?). Viene del Campo 02 del Canvas.</div>
+            </div>
+          </div>
+
+          <div class="pitch-block">
+            <div class="pb-tag"><span class="pb-tag-inner modelo">Siguiente paso</span></div>
+            <div class="pb-text">
+              <strong>Actualmente estamos buscando una ronda de inversión semilla de $100,000 dólares para expandirnos a tres ciudades más y mejorar nuestra tecnología.</strong>
+              <div class="pb-note">Próximo paso concreto y medible. Responde a la Pregunta Crítica 03 (¿qué necesitas?). Viene del Campo 04 del Canvas (Próximos pasos).</div>
+            </div>
+          </div>
+
+          <div class="pitch-block">
+            <div class="pb-tag"><span class="pb-tag-inner cierre">Cierre</span></div>
+            <div class="pb-text">
+              <strong>Me encantaría invitarte un café esta semana para mostrarte la aplicación en funcionamiento. ¿Me permites tu tarjeta?</strong>
+              <div class="pb-note">Llamada a la acción específica y de bajo compromiso. No pide dinero directamente — pide una reunión. El cierre ideal siempre termina con una pregunta o una acción concreta.</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- De dónde viene cada parte -->
+    <div class="ex-card">
+      <div class="ex-hd"><div class="ex-ico">🗺️</div><div class="ex-title">¿De qué herramienta viene cada parte?</div></div>
+      <div class="ex-body">
+        <table class="cv-table">
+          <thead><tr><th>Parte del pitch</th><th>Herramienta de origen</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><div class="cf-lbl">Apertura</div></td>
+              <td class="cf-val cf-val-cell">Presentación libre del equipo y nombre del proyecto.</td>
+            </tr>
+            <tr>
+              <td><div class="cf-lbl">Hook con dato duro</div></td>
+              <td class="cf-val cf-val-cell"><strong>Pitching Canvas — Campo 01</strong> (Problema validado) + <strong>4 Preguntas Críticas — P2</strong> (¿qué evidencia tienes?).</td>
+            </tr>
+            <tr>
+              <td><div class="cf-lbl">Solución en una oración</div></td>
+              <td class="cf-val cf-val-cell"><strong>Pitching Canvas — Campo 03</strong> (Modelo / Solución).</td>
+            </tr>
+            <tr>
+              <td><div class="cf-lbl">Diferenciador + modelo de ingreso</div></td>
+              <td class="cf-val cf-val-cell"><strong>Pitching Canvas — Campo 03</strong> (Modelo) + estructura del <strong>Elevator Pitch</strong> ("a diferencia de…").</td>
+            </tr>
+            <tr>
+              <td><div class="cf-lbl">Tracción (prueba beta)</div></td>
+              <td class="cf-val cf-val-cell"><strong>Pitching Canvas — Campo 02</strong> (Evidencia) + <strong>4 Preguntas Críticas — P2</strong> (¿qué evidencia tienes?).</td>
+            </tr>
+            <tr>
+              <td><div class="cf-lbl">Siguiente paso + necesidad</div></td>
+              <td class="cf-val cf-val-cell"><strong>Pitching Canvas — Campo 04</strong> (Próximos pasos) + <strong>4 Preguntas Críticas — P3</strong> (¿qué necesitas?).</td>
+            </tr>
+            <tr>
+              <td><div class="cf-lbl">Cierre con llamada a la acción</div></td>
+              <td class="cf-val cf-val-cell"><strong>Elevator Pitch</strong> — estructura de cierre. Termina con pregunta o acción concreta de bajo compromiso.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div><!-- /tab-ecoplato -->
 
 </section>
 
